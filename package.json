@@ -1,0 +1,22 @@
+{
+  "name": "minidom",
+  "version": "0.0.0",
+  "description": "Small DOM level 1 implementation",
+  "main": "minidom.js",
+  "scripts": {
+    "test": "./node_modules/.bin/jasmine-node spec"
+  },
+  "repository": "",
+  "keywords": [
+    "dom",
+    "html"
+  ],
+  "author": "Stuart Knightley <stuart@stuartk.com>",
+  "license": "MIT",
+  "dependencies": {
+    "htmlparser2": "~3.0.5"
+  },
+  "devDependencies": {
+    "jasmine-node": "~1.7.1"
+  }
+}
