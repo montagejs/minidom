@@ -2,7 +2,7 @@ minidom
 =======
 
 A small JavaScript DOM. Implements DOM level 1, with `textContent` from level 3
-and `innerHTML` and `outerHTML` getters.
+and `innerHTML` and `outerHTML` getters. Only supports HTML documents.
 
 ## Usage
 
