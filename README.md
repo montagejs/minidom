@@ -16,7 +16,7 @@ document.getElementsByTagName("h1")[0].textContent === "Hi!"; // true
 
 ## Supported API
 
-Properties marked &#x20E0;  are read-only
+Properties marked &#x20E0;&nbsp; are read-only
 
 ### Node
 
@@ -101,7 +101,7 @@ Properties marked &#x20E0;  are read-only
 
 ## Thanks
 
-Made possible with large excepts from [JSDom](https://github.com/tmpvar/jsdom).
+Made possible with large excerpts from [JSDom](https://github.com/tmpvar/jsdom).
 
 ## License
 

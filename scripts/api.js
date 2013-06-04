@@ -3,7 +3,7 @@
 
 var dom = require("../minidom").dom;
 
-console.log("Properties marked &#x20E0;  are read-only\n");
+console.log("Properties marked &#x20E0;&nbsp; are read-only\n");
 
 // Node
 console.log(generate("Node", dom.Node.prototype));
