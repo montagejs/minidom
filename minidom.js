@@ -9,7 +9,7 @@ var DOCUMENT_OPTIONS = {
     contentType: "text/html"
 };
 
-module.exports = function minidom(html) {
+var exports = module.exports = function minidom(html) {
     if (!html) {
         html = "<html><head></head><body></body></html>";
     }
@@ -25,6 +25,8 @@ module.exports = function minidom(html) {
 
     return document;
 };
+
+exports.dom = dom;
 
 function Handler(document) {
     this.document = document;
