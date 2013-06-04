@@ -4,7 +4,7 @@
   "description": "Small DOM level 1 implementation",
   "main": "minidom.js",
   "scripts": {
-    "test": "./node_modules/.bin/jasmine-node spec"
+    "test": "istanbul test jasmine-node -- spec"
   },
   "repository": "",
   "keywords": [
@@ -17,6 +17,7 @@
     "htmlparser2": "~3.0.5"
   },
   "devDependencies": {
-    "jasmine-node": "~1.7.1"
+    "jasmine-node": "~1.7.1",
+    "istanbul": "~0.1.36"
   }
 }
