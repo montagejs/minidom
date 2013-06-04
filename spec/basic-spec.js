@@ -32,33 +32,37 @@ describe("minidom", function () {
 
     describe("parsing", function () {
 
-        it("create elements", function () {
-            var doc = minidom(
-                "<html><head><title>pass</title></head><body><h1>pass</h1></body></html"
-            );
-            expect(doc.children[0].tagName).toEqual("HTML");
-            expect(doc.children[0].children[0].tagName).toEqual("HEAD");
-            expect(doc.children[0].children[0].children[0].textContent).toEqual("pass");
+        describe("doctype", function () {
+            it("works", function () {
+                var doctype = "<!DOCTYPE html>";
+
+                var doc = minidom(
+                    doctype + "<html><body>pass</body></html"
+                );
+                expect(doc.doctype.name).toEqual("html");
+                expect(doc.doctype.toString()).toEqual(doctype);
+
+                expect(doc.children[0].tagName).toEqual("HTML");
+                expect(doc.children[0].children[0].tagName).toEqual("BODY");
+                expect(doc.children[0].children[0].textContent).toEqual("pass");
+            });
+
+            it("rejects non-HTML doctypes", function () {
+                expect(function(){
+                    minidom("<!doctype wrong><html><body>pass</body></html");
+                }).toThrow(new Error("minidom only supports HTML documents, not '!doctype wrong'"));
+            });
         });
 
-        it("rejects non-HTML doctypes", function () {
-            expect(function(){
-                minidom("<!doctype wrong><html><body>pass</body></html");
-            }).toThrow(new Error("minidom only supports HTML documents, not '!doctype wrong'"));
-        });
-
-        it("handles doctype", function () {
-            var doctype = "<!DOCTYPE html>";
-
-            var doc = minidom(
-                doctype + "<html><body>pass</body></html"
-            );
-            expect(doc.doctype.name).toEqual("html");
-            expect(doc.doctype.toString()).toEqual(doctype);
-
-            expect(doc.children[0].tagName).toEqual("HTML");
-            expect(doc.children[0].children[0].tagName).toEqual("BODY");
-            expect(doc.children[0].children[0].textContent).toEqual("pass");
+        describe("elements", function () {
+            it("works", function () {
+                var doc = minidom(
+                    "<html><head><title>pass</title></head><body><h1>pass</h1></body></html"
+                );
+                expect(doc.children[0].tagName).toEqual("HTML");
+                expect(doc.children[0].children[0].tagName).toEqual("HEAD");
+                expect(doc.children[0].children[0].children[0].textContent).toEqual("pass");
+            });
         });
 
     });
