@@ -15,6 +15,9 @@ module.exports = function minidom(html) {
     }
 
     var document = new dom.Document(DOCUMENT_OPTIONS);
+    // We only work with the HTML doctype
+    document.doctype = new dom.DocumentType(document, "html");
+
     var handler = new Handler(document);
     var parser = new htmlparser.Parser(handler);
 
@@ -48,9 +51,6 @@ Handler.prototype = {
     },
 
     onclosetag: function (tagName) {
-        if (this._peek().tagName !== tagName) {
-            throw new Error("Cannot close tag " + this._peek().tagName + " with " + tagName);
-        }
         this._stack.pop();
     },
 
@@ -60,8 +60,18 @@ Handler.prototype = {
     },
 
     onprocessinginstruction: function (target, data) {
-        var node = this.document.createProcessingInstruction(target, data);
-        this._peek().appendChild(node);
+        if (target.toLowerCase() === "!doctype") {
+            if (!/!doctype html/i.test(data)) {
+                throw new Error("minidom only supports HTML documents, not '" + data + "'");
+            }
+            // We only work in HTML mode, and so no need to actually parse
+            // the doctype. Instead just give the user a way to get the
+            // original doctype back.
+            this.document.doctype.toString = function () { return "<" + data + ">"; };
+        } else {
+            var node = this.document.createProcessingInstruction(target, data);
+            this._peek().appendChild(node);
+        }
     },
 
     oncomment: function (data) {
