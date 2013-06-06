@@ -30,14 +30,11 @@ exports.dom = dom;
 
 function Handler(document) {
     this.document = document;
-    this._stack = [document];
+    this._currentElement = document;
     this._reset = false;
 }
 
 Handler.prototype = {
-    _peek: function () {
-        return this._stack[this._stack.length - 1];
-    },
 
     onopentag: function (tagName, attributes) {
         var el = this.document.createElement(tagName);
@@ -48,17 +45,17 @@ Handler.prototype = {
             }
         }
 
-        this._peek().appendChild(el);
-        this._stack.push(el);
+        this._currentElement.appendChild(el);
+        this._currentElement = el;
     },
 
     onclosetag: function (tagName) {
-        this._stack.pop();
+        this._currentElement = this._currentElement.parentNode;
     },
 
     ontext: function (text) {
         var node = this.document.createTextNode(text);
-        this._peek().appendChild(node);
+        this._currentElement.appendChild(node);
     },
 
     onprocessinginstruction: function (target, data) {
@@ -72,18 +69,18 @@ Handler.prototype = {
             this.document.doctype.toString = function () { return "<" + data + ">"; };
         } else {
             var node = this.document.createProcessingInstruction(target, data);
-            this._peek().appendChild(node);
+            this._currentElement.appendChild(node);
         }
     },
 
     oncomment: function (data) {
         var comment = this.document.createComment(data);
-        this._peek().appendChild(comment);
+        this._currentElement.appendChild(comment);
     },
 
     oncdatastart: function (data) {
         var cdata = this.document.createCDATASection(data);
-        this._peek().appendChild(cdata);
+        this._currentElement.appendChild(cdata);
     },
 
     onerror: function (error) {
