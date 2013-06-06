@@ -1,0 +1,20 @@
+<!DOCYTPE html>
+<html>
+ <head>
+  <title>012 - autofocus DOM attribute removes content attribute when set to false</title>
+  <link rel="help" href="http://www.whatwg.org/specs/web-forms/current-work/#the-autofocus" title="The autofocus attribute">
+ </head>
+ <body>
+  <p>It should say PASS in the text box below.</p>
+  <p><input type="text" name="test" autofocus id="test1" value="FAIL (script did not execute)"></p>
+  <script>
+    var test = document.getElementById("test1");
+	test.autofocus = false;
+	if (test.hasAttribute("autofocus")) {
+	  test.value = "FAIL";
+	} else {
+	  test.value = "PASS";
+	}
+  </script>
+ </body>
+</html

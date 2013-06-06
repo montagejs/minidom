@@ -1,0 +1,19 @@
+<!DOCYTPE html>
+<html>
+ <head>
+  <title>002 - autofocus after a script that calls .focus() on previous input</title>
+  <link rel="help" href="http://www.whatwg.org/specs/web-forms/current-work/#the-autofocus" title="The autofocus attribute">
+  <style>
+  #test1:focus, #test2 { background: red; }
+  #test2:focus, #test1 { background: green; }
+  </style>
+ </head>
+ <body>
+  <p>The second text box should be autofocused and both text boxes should be green.</p>
+  <p><input type="text" name="test" id="test1"></p>
+  <script>
+    document.getElementById("test1").focus();
+  </script>
+  <p><input type="text" name="test" autofocus id="test2"></p>
+ </body>
+</html

@@ -1,6 +1,5 @@
 /*global describe, it, expect */
 
-// var adaptor = require("./DOMTestCase");
 // Wrap assert so that we can add our own properties to it
 var assert = Object.create(require("assert"));
 

@@ -1,0 +1,26 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<title>Image Map Test 01</title>
+</head>
+<body>
+<div>
+	<h1>Image Map Test</h1>
+	<p>This tests image map areas.  The areas are made up with the following:</p>
+	<ol>
+		<li>Active area</li>
+		<li>Active area with title</li>
+		<li>Inactive area with title</li>
+		<li>Inactive area (no area element)</li>
+	</ol>
+	<p>
+		<map name="test" id="test">
+			<area coords="0,0,100,100" shape="rect" href="#" alt="1">
+			<area coords="100,0,200,100" shape="rect" href="#" alt="2" title="Active Area">
+			<area coords="0,100,100,200" shape="rect" alt="3" title="Inactive area">
+		</map>
+		<img src="map" alt="Image Map Test" height="200" width="200" usemap="#test"></p>
+</div>
+</body>
+</html>

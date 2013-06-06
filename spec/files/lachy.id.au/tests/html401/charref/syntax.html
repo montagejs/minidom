@@ -1,0 +1,2943 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+	"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title>Character Reference Syntax Test</title>
+	<style type="text/css">
+	table { border-collapse: collapse; }
+	table, colgroup { border: thin solid black; }
+	tbody th { text-align: left; }
+	tr:hover { background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1%2B%2FAAAABZ0RVh0Q3JlYXRpb24gVGltZQAxMC8xNi8wNboWZR0AAAAfdEVYdFNvZnR3YXJlAE1hY3JvbWVkaWEgRmlyZXdvcmtzIDi1aNJ4AAAADUlEQVQImWP4%2F%2F9%2FAwAJfAN%2BbOwQyQAAAABJRU5ErkJggg%3D%3D); }
+	.hex { background: #00FFFF; }
+	.hex .codepoint { background: #66FFFF; }
+	.hex .withrefc { background: #99FFFF; }
+	.hex .withoutrefc { background: #CCFFFF; }
+	.numeric { background: #FF00FF; }
+	.numeric .codepoint { background: #FF66FF; }
+	.numeric .withrefc { background: #FF99FF; }
+	.numeric .withoutrefc { background: #FFCCFF; }
+	.entity { background: #FFFF00; }
+	.entity .codepoint { background: #FFFF66; }
+	.entity .withrefc { background: #FFFF99; }
+	.entity .withoutrefc { background: #FFFFCC; }
+	samp { font-family: serif; display: block; text-align: center; }
+	</style>
+</head>
+<body>
+<h1>Character Reference Syntax Tests</h1>
+<p>The following tests browser  support for the syntax of hexadecimal and numeric
+	character references and entity references with and without the <code>REFC</code> (Reference
+	Close) delimiter (<code>;</code>) for the <a href="http://www.w3.org/TR/html401/sgml/entities.html">character
+	references defined in the HTML 4.01 Recommendation</a>. Note that <code>&amp;apos;</code> is
+	not defined in HTML 4.01, but it is included because some browsers do support
+	it.</p>
+
+<h2>Contents</h2>
+<ul>
+	<li><a href="#iso-8859-1">ISO-8859-1 Characters</a></li>
+	<li><a href="#sym">Symbols, Mathematical Symbols, and Greek Letters</a></li>
+	<li><a href="#misc">Markup-Significant and Internationalization Characters</a></li>
+</ul>
+
+<h2 id="iso-8859-1">ISO-8859-1 Characters</h2>
+<table>
+	<colgroup class="hex" title="Hexadecimal Character Reference">
+		<col class="codepoint">
+		<col class="withrefc">
+		<col class="withoutrefc">
+	</colgroup>
+	<colgroup class="numeric" title="Numeric Character Reference">
+		<col class="codepoint">
+		<col class="withrefc">
+		<col class="withoutrefc">
+	</colgroup>
+	<colgroup class="entity" title="Entity References">
+		<col class="codepoint">
+		<col class="withrefc">
+		<col class="withoutrefc">
+	</colgroup>
+	<thead>
+		<tr>
+			<th colspan="3">Hex</th>
+			<th colspan="3">Numeric</th>
+			<th colspan="3">Entity Reference </th>
+		</tr>
+		<tr>
+			<th>Code Point</th>
+			<th>with <code>REFC</code></th>
+			<th>without <code>REFC</code></th>
+			<th>Code Point</th>
+			<th>with <code>REFC</code></th>
+			<th>without <code>REFC</code></th>
+			<th>Entity Name</th>
+			<th>with <code>REFC</code></th>
+			<th>without <code>REFC</code></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th scope="row"><code>U+00A0</code></th>
+			<td><samp>&#x00A0;</samp></td>
+			<td><samp>&#x00A0</samp></td>
+			<th scope="row"><code>#160</code></th>
+			<td><samp>&#160;</samp></td>
+			<td><samp>&#160</samp></td>
+			<th scope="row"><code>nbsp</code></th>
+			<td><a href="http://example.org/?test&nbsp;=0"><samp>&nbsp;</samp></a></td>
+			<td><a href="http://example.org/?test&nbsp=1"><samp>&nbsp</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00A1</code></th>
+			<td><samp>&#x00A1;</samp></td>
+			<td><samp>&#x00A1</samp></td>
+			<th scope="row"><code>#161</code></th>
+			<td><samp>&#161;</samp></td>
+			<td><samp>&#161</samp></td>
+			<th scope="row"><code>iexcl</code></th>
+			<td><a href="http://example.org/?test&iexcl;=0"><samp>&iexcl;</samp></a></td>
+			<td><a href="http://example.org/?test&iexcl=1"><samp>&iexcl</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00A2</code></th>
+			<td><samp>&#x00A2;</samp></td>
+			<td><samp>&#x00A2</samp></td>
+			<th scope="row"><code>#162</code></th>
+			<td><samp>&#162;</samp></td>
+			<td><samp>&#162</samp></td>
+			<th scope="row"><code>cent</code></th>
+			<td><a href="http://example.org/?test&cent;=0"><samp>&cent;</samp></a></td>
+			<td><a href="http://example.org/?test&cent=1"><samp>&cent</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00A3</code></th>
+			<td><samp>&#x00A3;</samp></td>
+			<td><samp>&#x00A3</samp></td>
+			<th scope="row"><code>#163</code></th>
+			<td><samp>&#163;</samp></td>
+			<td><samp>&#163</samp></td>
+			<th scope="row"><code>pound</code></th>
+			<td><a href="http://example.org/?test&pound;=0"><samp>&pound;</samp></a></td>
+			<td><a href="http://example.org/?test&pound=1"><samp>&pound</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00A4</code></th>
+			<td><samp>&#x00A4;</samp></td>
+			<td><samp>&#x00A4</samp></td>
+			<th scope="row"><code>#164</code></th>
+			<td><samp>&#164;</samp></td>
+			<td><samp>&#164</samp></td>
+			<th scope="row"><code>curren</code></th>
+			<td><a href="http://example.org/?test&curren;=0"><samp>&curren;</samp></a></td>
+			<td><a href="http://example.org/?test&curren=1"><samp>&curren</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00A5</code></th>
+			<td><samp>&#x00A5;</samp></td>
+			<td><samp>&#x00A5</samp></td>
+			<th scope="row"><code>#165</code></th>
+			<td><samp>&#165;</samp></td>
+			<td><samp>&#165</samp></td>
+			<th scope="row"><code>yen</code></th>
+			<td><a href="http://example.org/?test&yen;=0"><samp>&yen;</samp></a></td>
+			<td><a href="http://example.org/?test&yen=1"><samp>&yen</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00A6</code></th>
+			<td><samp>&#x00A6;</samp></td>
+			<td><samp>&#x00A6</samp></td>
+			<th scope="row"><code>#166</code></th>
+			<td><samp>&#166;</samp></td>
+			<td><samp>&#166</samp></td>
+			<th scope="row"><code>brvbar</code></th>
+			<td><a href="http://example.org/?test&brvbar;=0"><samp>&brvbar;</samp></a></td>
+			<td><a href="http://example.org/?test&brvbar=1"><samp>&brvbar</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00A7</code></th>
+			<td><samp>&#x00A7;</samp></td>
+			<td><samp>&#x00A7</samp></td>
+			<th scope="row"><code>#167</code></th>
+			<td><samp>&#167;</samp></td>
+			<td><samp>&#167</samp></td>
+			<th scope="row"><code>sect</code></th>
+			<td><a href="http://example.org/?test&sect;=0"><samp>&sect;</samp></a></td>
+			<td><a href="http://example.org/?test&sect=1"><samp>&sect</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00A8</code></th>
+			<td><samp>&#x00A8;</samp></td>
+			<td><samp>&#x00A8</samp></td>
+			<th scope="row"><code>#168</code></th>
+			<td><samp>&#168;</samp></td>
+			<td><samp>&#168</samp></td>
+			<th scope="row"><code>uml</code></th>
+			<td><a href="http://example.org/?test&uml;=0"><samp>&uml;</samp></a></td>
+			<td><a href="http://example.org/?test&uml=1"><samp>&uml</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00A9</code></th>
+			<td><samp>&#x00A9;</samp></td>
+			<td><samp>&#x00A9</samp></td>
+			<th scope="row"><code>#169</code></th>
+			<td><samp>&#169;</samp></td>
+			<td><samp>&#169</samp></td>
+			<th scope="row"><code>copy</code></th>
+			<td><a href="http://example.org/?test&copy;=0"><samp>&copy;</samp></a></td>
+			<td><a href="http://example.org/?test&copy=1"><samp>&copy</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00AA</code></th>
+			<td><samp>&#x00AA;</samp></td>
+			<td><samp>&#x00AA</samp></td>
+			<th scope="row"><code>#170</code></th>
+			<td><samp>&#170;</samp></td>
+			<td><samp>&#170</samp></td>
+			<th scope="row"><code>ordf</code></th>
+			<td><a href="http://example.org/?test&ordf;=0"><samp>&ordf;</samp></a></td>
+			<td><a href="http://example.org/?test&ordf=1"><samp>&ordf</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00AB</code></th>
+			<td><samp>&#x00AB;</samp></td>
+			<td><samp>&#x00AB</samp></td>
+			<th scope="row"><code>#171</code></th>
+			<td><samp>&#171;</samp></td>
+			<td><samp>&#171</samp></td>
+			<th scope="row"><code>laquo</code></th>
+			<td><a href="http://example.org/?test&laquo;=0"><samp>&laquo;</samp></a></td>
+			<td><a href="http://example.org/?test&laquo=1"><samp>&laquo</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00AC</code></th>
+			<td><samp>&#x00AC;</samp></td>
+			<td><samp>&#x00AC</samp></td>
+			<th scope="row"><code>#172</code></th>
+			<td><samp>&#172;</samp></td>
+			<td><samp>&#172</samp></td>
+			<th scope="row"><code>not</code></th>
+			<td><a href="http://example.org/?test&not;=0"><samp>&not;</samp></a></td>
+			<td><a href="http://example.org/?test&not=1"><samp>&not</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00AD</code></th>
+			<td><samp>&#x00AD;</samp></td>
+			<td><samp>&#x00AD</samp></td>
+			<th scope="row"><code>#173</code></th>
+			<td><samp>&#173;</samp></td>
+			<td><samp>&#173</samp></td>
+			<th scope="row"><code>shy</code></th>
+			<td><a href="http://example.org/?test&shy;=0"><samp>&shy;</samp></a></td>
+			<td><a href="http://example.org/?test&shy=1"><samp>&shy</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00AE</code></th>
+			<td><samp>&#x00AE;</samp></td>
+			<td><samp>&#x00AE</samp></td>
+			<th scope="row"><code>#174</code></th>
+			<td><samp>&#174;</samp></td>
+			<td><samp>&#174</samp></td>
+			<th scope="row"><code>reg</code></th>
+			<td><a href="http://example.org/?test&reg;=0"><samp>&reg;</samp></a></td>
+			<td><a href="http://example.org/?test&reg=1"><samp>&reg</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00AF</code></th>
+			<td><samp>&#x00AF;</samp></td>
+			<td><samp>&#x00AF</samp></td>
+			<th scope="row"><code>#175</code></th>
+			<td><samp>&#175;</samp></td>
+			<td><samp>&#175</samp></td>
+			<th scope="row"><code>macr</code></th>
+			<td><a href="http://example.org/?test&macr;=0"><samp>&macr;</samp></a></td>
+			<td><a href="http://example.org/?test&macr=1"><samp>&macr</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00B0</code></th>
+			<td><samp>&#x00B0;</samp></td>
+			<td><samp>&#x00B0</samp></td>
+			<th scope="row"><code>#176</code></th>
+			<td><samp>&#176;</samp></td>
+			<td><samp>&#176</samp></td>
+			<th scope="row"><code>deg</code></th>
+			<td><a href="http://example.org/?test&deg;=0"><samp>&deg;</samp></a></td>
+			<td><a href="http://example.org/?test&deg=1"><samp>&deg</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00B1</code></th>
+			<td><samp>&#x00B1;</samp></td>
+			<td><samp>&#x00B1</samp></td>
+			<th scope="row"><code>#177</code></th>
+			<td><samp>&#177;</samp></td>
+			<td><samp>&#177</samp></td>
+			<th scope="row"><code>plusmn</code></th>
+			<td><a href="http://example.org/?test&plusmn;=0"><samp>&plusmn;</samp></a></td>
+			<td><a href="http://example.org/?test&plusmn=1"><samp>&plusmn</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00B2</code></th>
+			<td><samp>&#x00B2;</samp></td>
+			<td><samp>&#x00B2</samp></td>
+			<th scope="row"><code>#178</code></th>
+			<td><samp>&#178;</samp></td>
+			<td><samp>&#178</samp></td>
+			<th scope="row"><code>sup2</code></th>
+			<td><a href="http://example.org/?test&sup2;=0"><samp>&sup2;</samp></a></td>
+			<td><a href="http://example.org/?test&sup2=1"><samp>&sup2</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00B3</code></th>
+			<td><samp>&#x00B3;</samp></td>
+			<td><samp>&#x00B3</samp></td>
+			<th scope="row"><code>#179</code></th>
+			<td><samp>&#179;</samp></td>
+			<td><samp>&#179</samp></td>
+			<th scope="row"><code>sup3</code></th>
+			<td><a href="http://example.org/?test&sup3;=0"><samp>&sup3;</samp></a></td>
+			<td><a href="http://example.org/?test&sup3=1"><samp>&sup3</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00B4</code></th>
+			<td><samp>&#x00B4;</samp></td>
+			<td><samp>&#x00B4</samp></td>
+			<th scope="row"><code>#180</code></th>
+			<td><samp>&#180;</samp></td>
+			<td><samp>&#180</samp></td>
+			<th scope="row"><code>acute</code></th>
+			<td><a href="http://example.org/?test&acute;=0"><samp>&acute;</samp></a></td>
+			<td><a href="http://example.org/?test&acute=1"><samp>&acute</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00B5</code></th>
+			<td><samp>&#x00B5;</samp></td>
+			<td><samp>&#x00B5</samp></td>
+			<th scope="row"><code>#181</code></th>
+			<td><samp>&#181;</samp></td>
+			<td><samp>&#181</samp></td>
+			<th scope="row"><code>micro</code></th>
+			<td><a href="http://example.org/?test&micro;=0"><samp>&micro;</samp></a></td>
+			<td><a href="http://example.org/?test&micro=1"><samp>&micro</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00B6</code></th>
+			<td><samp>&#x00B6;</samp></td>
+			<td><samp>&#x00B6</samp></td>
+			<th scope="row"><code>#182</code></th>
+			<td><samp>&#182;</samp></td>
+			<td><samp>&#182</samp></td>
+			<th scope="row"><code>para</code></th>
+			<td><a href="http://example.org/?test&para;=0"><samp>&para;</samp></a></td>
+			<td><a href="http://example.org/?test&para=1"><samp>&para</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00B7</code></th>
+			<td><samp>&#x00B7;</samp></td>
+			<td><samp>&#x00B7</samp></td>
+			<th scope="row"><code>#183</code></th>
+			<td><samp>&#183;</samp></td>
+			<td><samp>&#183</samp></td>
+			<th scope="row"><code>middot</code></th>
+			<td><a href="http://example.org/?test&middot;=0"><samp>&middot;</samp></a></td>
+			<td><a href="http://example.org/?test&middot=1"><samp>&middot</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00B8</code></th>
+			<td><samp>&#x00B8;</samp></td>
+			<td><samp>&#x00B8</samp></td>
+			<th scope="row"><code>#184</code></th>
+			<td><samp>&#184;</samp></td>
+			<td><samp>&#184</samp></td>
+			<th scope="row"><code>cedil</code></th>
+			<td><a href="http://example.org/?test&cedil;=0"><samp>&cedil;</samp></a></td>
+			<td><a href="http://example.org/?test&cedil=1"><samp>&cedil</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00B9</code></th>
+			<td><samp>&#x00B9;</samp></td>
+			<td><samp>&#x00B9</samp></td>
+			<th scope="row"><code>#185</code></th>
+			<td><samp>&#185;</samp></td>
+			<td><samp>&#185</samp></td>
+			<th scope="row"><code>sup1</code></th>
+			<td><a href="http://example.org/?test&sup1;=0"><samp>&sup1;</samp></a></td>
+			<td><a href="http://example.org/?test&sup1=1"><samp>&sup1</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00BA</code></th>
+			<td><samp>&#x00BA;</samp></td>
+			<td><samp>&#x00BA</samp></td>
+			<th scope="row"><code>#186</code></th>
+			<td><samp>&#186;</samp></td>
+			<td><samp>&#186</samp></td>
+			<th scope="row"><code>ordm</code></th>
+			<td><a href="http://example.org/?test&ordm;=0"><samp>&ordm;</samp></a></td>
+			<td><a href="http://example.org/?test&ordm=1"><samp>&ordm</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00BB</code></th>
+			<td><samp>&#x00BB;</samp></td>
+			<td><samp>&#x00BB</samp></td>
+			<th scope="row"><code>#187</code></th>
+			<td><samp>&#187;</samp></td>
+			<td><samp>&#187</samp></td>
+			<th scope="row"><code>raquo</code></th>
+			<td><a href="http://example.org/?test&raquo;=0"><samp>&raquo;</samp></a></td>
+			<td><a href="http://example.org/?test&raquo=1"><samp>&raquo</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00BC</code></th>
+			<td><samp>&#x00BC;</samp></td>
+			<td><samp>&#x00BC</samp></td>
+			<th scope="row"><code>#188</code></th>
+			<td><samp>&#188;</samp></td>
+			<td><samp>&#188</samp></td>
+			<th scope="row"><code>frac14</code></th>
+			<td><a href="http://example.org/?test&frac14;=0"><samp>&frac14;</samp></a></td>
+			<td><a href="http://example.org/?test&frac14=1"><samp>&frac14</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00BD</code></th>
+			<td><samp>&#x00BD;</samp></td>
+			<td><samp>&#x00BD</samp></td>
+			<th scope="row"><code>#189</code></th>
+			<td><samp>&#189;</samp></td>
+			<td><samp>&#189</samp></td>
+			<th scope="row"><code>frac12</code></th>
+			<td><a href="http://example.org/?test&frac12;=0"><samp>&frac12;</samp></a></td>
+			<td><a href="http://example.org/?test&frac12=1"><samp>&frac12</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00BE</code></th>
+			<td><samp>&#x00BE;</samp></td>
+			<td><samp>&#x00BE</samp></td>
+			<th scope="row"><code>#190</code></th>
+			<td><samp>&#190;</samp></td>
+			<td><samp>&#190</samp></td>
+			<th scope="row"><code>frac34</code></th>
+			<td><a href="http://example.org/?test&frac34;=0"><samp>&frac34;</samp></a></td>
+			<td><a href="http://example.org/?test&frac34=1"><samp>&frac34</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00BF</code></th>
+			<td><samp>&#x00BF;</samp></td>
+			<td><samp>&#x00BF</samp></td>
+			<th scope="row"><code>#191</code></th>
+			<td><samp>&#191;</samp></td>
+			<td><samp>&#191</samp></td>
+			<th scope="row"><code>iquest</code></th>
+			<td><a href="http://example.org/?test&iquest;=0"><samp>&iquest;</samp></a></td>
+			<td><a href="http://example.org/?test&iquest=1"><samp>&iquest</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00C0</code></th>
+			<td><samp>&#x00C0;</samp></td>
+			<td><samp>&#x00C0</samp></td>
+			<th scope="row"><code>#192</code></th>
+			<td><samp>&#192;</samp></td>
+			<td><samp>&#192</samp></td>
+			<th scope="row"><code>Agrave</code></th>
+			<td><a href="http://example.org/?test&Agrave;=0"><samp>&Agrave;</samp></a></td>
+			<td><a href="http://example.org/?test&Agrave=1"><samp>&Agrave</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00C1</code></th>
+			<td><samp>&#x00C1;</samp></td>
+			<td><samp>&#x00C1</samp></td>
+			<th scope="row"><code>#193</code></th>
+			<td><samp>&#193;</samp></td>
+			<td><samp>&#193</samp></td>
+			<th scope="row"><code>Aacute</code></th>
+			<td><a href="http://example.org/?test&Aacute;=0"><samp>&Aacute;</samp></a></td>
+			<td><a href="http://example.org/?test&Aacute=1"><samp>&Aacute</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00C2</code></th>
+			<td><samp>&#x00C2;</samp></td>
+			<td><samp>&#x00C2</samp></td>
+			<th scope="row"><code>#194</code></th>
+			<td><samp>&#194;</samp></td>
+			<td><samp>&#194</samp></td>
+			<th scope="row"><code>Acirc</code></th>
+			<td><a href="http://example.org/?test&Acirc;=0"><samp>&Acirc;</samp></a></td>
+			<td><a href="http://example.org/?test&Acirc=1"><samp>&Acirc</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00C3</code></th>
+			<td><samp>&#x00C3;</samp></td>
+			<td><samp>&#x00C3</samp></td>
+			<th scope="row"><code>#195</code></th>
+			<td><samp>&#195;</samp></td>
+			<td><samp>&#195</samp></td>
+			<th scope="row"><code>Atilde</code></th>
+			<td><a href="http://example.org/?test&Atilde;=0"><samp>&Atilde;</samp></a></td>
+			<td><a href="http://example.org/?test&Atilde=1"><samp>&Atilde</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00C4</code></th>
+			<td><samp>&#x00C4;</samp></td>
+			<td><samp>&#x00C4</samp></td>
+			<th scope="row"><code>#196</code></th>
+			<td><samp>&#196;</samp></td>
+			<td><samp>&#196</samp></td>
+			<th scope="row"><code>Auml</code></th>
+			<td><a href="http://example.org/?test&Auml;=0"><samp>&Auml;</samp></a></td>
+			<td><a href="http://example.org/?test&Auml=1"><samp>&Auml</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00C5</code></th>
+			<td><samp>&#x00C5;</samp></td>
+			<td><samp>&#x00C5</samp></td>
+			<th scope="row"><code>#197</code></th>
+			<td><samp>&#197;</samp></td>
+			<td><samp>&#197</samp></td>
+			<th scope="row"><code>Aring</code></th>
+			<td><a href="http://example.org/?test&Aring;=0"><samp>&Aring;</samp></a></td>
+			<td><a href="http://example.org/?test&Aring=1"><samp>&Aring</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00C6</code></th>
+			<td><samp>&#x00C6;</samp></td>
+			<td><samp>&#x00C6</samp></td>
+			<th scope="row"><code>#198</code></th>
+			<td><samp>&#198;</samp></td>
+			<td><samp>&#198</samp></td>
+			<th scope="row"><code>AElig</code></th>
+			<td><a href="http://example.org/?test&AElig;=0"><samp>&AElig;</samp></a></td>
+			<td><a href="http://example.org/?test&AElig=1"><samp>&AElig</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00C7</code></th>
+			<td><samp>&#x00C7;</samp></td>
+			<td><samp>&#x00C7</samp></td>
+			<th scope="row"><code>#199</code></th>
+			<td><samp>&#199;</samp></td>
+			<td><samp>&#199</samp></td>
+			<th scope="row"><code>Ccedil</code></th>
+			<td><a href="http://example.org/?test&Ccedil;=0"><samp>&Ccedil;</samp></a></td>
+			<td><a href="http://example.org/?test&Ccedil=1"><samp>&Ccedil</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00C8</code></th>
+			<td><samp>&#x00C8;</samp></td>
+			<td><samp>&#x00C8</samp></td>
+			<th scope="row"><code>#200</code></th>
+			<td><samp>&#200;</samp></td>
+			<td><samp>&#200</samp></td>
+			<th scope="row"><code>Egrave</code></th>
+			<td><a href="http://example.org/?test&Egrave;=0"><samp>&Egrave;</samp></a></td>
+			<td><a href="http://example.org/?test&Egrave=1"><samp>&Egrave</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00C9</code></th>
+			<td><samp>&#x00C9;</samp></td>
+			<td><samp>&#x00C9</samp></td>
+			<th scope="row"><code>#201</code></th>
+			<td><samp>&#201;</samp></td>
+			<td><samp>&#201</samp></td>
+			<th scope="row"><code>Eacute</code></th>
+			<td><a href="http://example.org/?test&Eacute;=0"><samp>&Eacute;</samp></a></td>
+			<td><a href="http://example.org/?test&Eacute=1"><samp>&Eacute</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00CA</code></th>
+			<td><samp>&#x00CA;</samp></td>
+			<td><samp>&#x00CA</samp></td>
+			<th scope="row"><code>#202</code></th>
+			<td><samp>&#202;</samp></td>
+			<td><samp>&#202</samp></td>
+			<th scope="row"><code>Ecirc</code></th>
+			<td><a href="http://example.org/?test&Ecirc;=0"><samp>&Ecirc;</samp></a></td>
+			<td><a href="http://example.org/?test&Ecirc=1"><samp>&Ecirc</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00CB</code></th>
+			<td><samp>&#x00CB;</samp></td>
+			<td><samp>&#x00CB</samp></td>
+			<th scope="row"><code>#203</code></th>
+			<td><samp>&#203;</samp></td>
+			<td><samp>&#203</samp></td>
+			<th scope="row"><code>Euml</code></th>
+			<td><a href="http://example.org/?test&Euml;=0"><samp>&Euml;</samp></a></td>
+			<td><a href="http://example.org/?test&Euml=1"><samp>&Euml</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00CC</code></th>
+			<td><samp>&#x00CC;</samp></td>
+			<td><samp>&#x00CC</samp></td>
+			<th scope="row"><code>#204</code></th>
+			<td><samp>&#204;</samp></td>
+			<td><samp>&#204</samp></td>
+			<th scope="row"><code>Igrave</code></th>
+			<td><a href="http://example.org/?test&Igrave;=0"><samp>&Igrave;</samp></a></td>
+			<td><a href="http://example.org/?test&Igrave=1"><samp>&Igrave</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00CD</code></th>
+			<td><samp>&#x00CD;</samp></td>
+			<td><samp>&#x00CD</samp></td>
+			<th scope="row"><code>#205</code></th>
+			<td><samp>&#205;</samp></td>
+			<td><samp>&#205</samp></td>
+			<th scope="row"><code>Iacute</code></th>
+			<td><a href="http://example.org/?test&Iacute;=0"><samp>&Iacute;</samp></a></td>
+			<td><a href="http://example.org/?test&Iacute=1"><samp>&Iacute</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00CE</code></th>
+			<td><samp>&#x00CE;</samp></td>
+			<td><samp>&#x00CE</samp></td>
+			<th scope="row"><code>#206</code></th>
+			<td><samp>&#206;</samp></td>
+			<td><samp>&#206</samp></td>
+			<th scope="row"><code>Icirc</code></th>
+			<td><a href="http://example.org/?test&Icirc;=0"><samp>&Icirc;</samp></a></td>
+			<td><a href="http://example.org/?test&Icirc=1"><samp>&Icirc</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00CF</code></th>
+			<td><samp>&#x00CF;</samp></td>
+			<td><samp>&#x00CF</samp></td>
+			<th scope="row"><code>#207</code></th>
+			<td><samp>&#207;</samp></td>
+			<td><samp>&#207</samp></td>
+			<th scope="row"><code>Iuml</code></th>
+			<td><a href="http://example.org/?test&Iuml;=0"><samp>&Iuml;</samp></a></td>
+			<td><a href="http://example.org/?test&Iuml=1"><samp>&Iuml</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00D0</code></th>
+			<td><samp>&#x00D0;</samp></td>
+			<td><samp>&#x00D0</samp></td>
+			<th scope="row"><code>#208</code></th>
+			<td><samp>&#208;</samp></td>
+			<td><samp>&#208</samp></td>
+			<th scope="row"><code>ETH</code></th>
+			<td><a href="http://example.org/?test&ETH;=0"><samp>&ETH;</samp></a></td>
+			<td><a href="http://example.org/?test&ETH=1"><samp>&ETH</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00D1</code></th>
+			<td><samp>&#x00D1;</samp></td>
+			<td><samp>&#x00D1</samp></td>
+			<th scope="row"><code>#209</code></th>
+			<td><samp>&#209;</samp></td>
+			<td><samp>&#209</samp></td>
+			<th scope="row"><code>Ntilde</code></th>
+			<td><a href="http://example.org/?test&Ntilde;=0"><samp>&Ntilde;</samp></a></td>
+			<td><a href="http://example.org/?test&Ntilde=1"><samp>&Ntilde</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00D2</code></th>
+			<td><samp>&#x00D2;</samp></td>
+			<td><samp>&#x00D2</samp></td>
+			<th scope="row"><code>#210</code></th>
+			<td><samp>&#210;</samp></td>
+			<td><samp>&#210</samp></td>
+			<th scope="row"><code>Ograve</code></th>
+			<td><a href="http://example.org/?test&Ograve;=0"><samp>&Ograve;</samp></a></td>
+			<td><a href="http://example.org/?test&Ograve=1"><samp>&Ograve</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00D3</code></th>
+			<td><samp>&#x00D3;</samp></td>
+			<td><samp>&#x00D3</samp></td>
+			<th scope="row"><code>#211</code></th>
+			<td><samp>&#211;</samp></td>
+			<td><samp>&#211</samp></td>
+			<th scope="row"><code>Oacute</code></th>
+			<td><a href="http://example.org/?test&Oacute;=0"><samp>&Oacute;</samp></a></td>
+			<td><a href="http://example.org/?test&Oacute=1"><samp>&Oacute</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00D4</code></th>
+			<td><samp>&#x00D4;</samp></td>
+			<td><samp>&#x00D4</samp></td>
+			<th scope="row"><code>#212</code></th>
+			<td><samp>&#212;</samp></td>
+			<td><samp>&#212</samp></td>
+			<th scope="row"><code>Ocirc</code></th>
+			<td><a href="http://example.org/?test&Ocirc;=0"><samp>&Ocirc;</samp></a></td>
+			<td><a href="http://example.org/?test&Ocirc=1"><samp>&Ocirc</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00D5</code></th>
+			<td><samp>&#x00D5;</samp></td>
+			<td><samp>&#x00D5</samp></td>
+			<th scope="row"><code>#213</code></th>
+			<td><samp>&#213;</samp></td>
+			<td><samp>&#213</samp></td>
+			<th scope="row"><code>Otilde</code></th>
+			<td><a href="http://example.org/?test&Otilde;=0"><samp>&Otilde;</samp></a></td>
+			<td><a href="http://example.org/?test&Otilde=1"><samp>&Otilde</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00D6</code></th>
+			<td><samp>&#x00D6;</samp></td>
+			<td><samp>&#x00D6</samp></td>
+			<th scope="row"><code>#214</code></th>
+			<td><samp>&#214;</samp></td>
+			<td><samp>&#214</samp></td>
+			<th scope="row"><code>Ouml</code></th>
+			<td><a href="http://example.org/?test&Ouml;=0"><samp>&Ouml;</samp></a></td>
+			<td><a href="http://example.org/?test&Ouml=1"><samp>&Ouml</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00D7</code></th>
+			<td><samp>&#x00D7;</samp></td>
+			<td><samp>&#x00D7</samp></td>
+			<th scope="row"><code>#215</code></th>
+			<td><samp>&#215;</samp></td>
+			<td><samp>&#215</samp></td>
+			<th scope="row"><code>times</code></th>
+			<td><a href="http://example.org/?test&times;=0"><samp>&times;</samp></a></td>
+			<td><a href="http://example.org/?test&times=1"><samp>&times</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00D8</code></th>
+			<td><samp>&#x00D8;</samp></td>
+			<td><samp>&#x00D8</samp></td>
+			<th scope="row"><code>#216</code></th>
+			<td><samp>&#216;</samp></td>
+			<td><samp>&#216</samp></td>
+			<th scope="row"><code>Oslash</code></th>
+			<td><a href="http://example.org/?test&Oslash;=0"><samp>&Oslash;</samp></a></td>
+			<td><a href="http://example.org/?test&Oslash=1"><samp>&Oslash</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00D9</code></th>
+			<td><samp>&#x00D9;</samp></td>
+			<td><samp>&#x00D9</samp></td>
+			<th scope="row"><code>#217</code></th>
+			<td><samp>&#217;</samp></td>
+			<td><samp>&#217</samp></td>
+			<th scope="row"><code>Ugrave</code></th>
+			<td><a href="http://example.org/?test&Ugrave;=0"><samp>&Ugrave;</samp></a></td>
+			<td><a href="http://example.org/?test&Ugrave=1"><samp>&Ugrave</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00DA</code></th>
+			<td><samp>&#x00DA;</samp></td>
+			<td><samp>&#x00DA</samp></td>
+			<th scope="row"><code>#218</code></th>
+			<td><samp>&#218;</samp></td>
+			<td><samp>&#218</samp></td>
+			<th scope="row"><code>Uacute</code></th>
+			<td><a href="http://example.org/?test&Uacute;=0"><samp>&Uacute;</samp></a></td>
+			<td><a href="http://example.org/?test&Uacute=1"><samp>&Uacute</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00DB</code></th>
+			<td><samp>&#x00DB;</samp></td>
+			<td><samp>&#x00DB</samp></td>
+			<th scope="row"><code>#219</code></th>
+			<td><samp>&#219;</samp></td>
+			<td><samp>&#219</samp></td>
+			<th scope="row"><code>Ucirc</code></th>
+			<td><a href="http://example.org/?test&Ucirc;=0"><samp>&Ucirc;</samp></a></td>
+			<td><a href="http://example.org/?test&Ucirc=1"><samp>&Ucirc</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00DC</code></th>
+			<td><samp>&#x00DC;</samp></td>
+			<td><samp>&#x00DC</samp></td>
+			<th scope="row"><code>#220</code></th>
+			<td><samp>&#220;</samp></td>
+			<td><samp>&#220</samp></td>
+			<th scope="row"><code>Uuml</code></th>
+			<td><a href="http://example.org/?test&Uuml;=0"><samp>&Uuml;</samp></a></td>
+			<td><a href="http://example.org/?test&Uuml=1"><samp>&Uuml</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00DD</code></th>
+			<td><samp>&#x00DD;</samp></td>
+			<td><samp>&#x00DD</samp></td>
+			<th scope="row"><code>#221</code></th>
+			<td><samp>&#221;</samp></td>
+			<td><samp>&#221</samp></td>
+			<th scope="row"><code>Yacute</code></th>
+			<td><a href="http://example.org/?test&Yacute;=0"><samp>&Yacute;</samp></a></td>
+			<td><a href="http://example.org/?test&Yacute=1"><samp>&Yacute</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00DE</code></th>
+			<td><samp>&#x00DE;</samp></td>
+			<td><samp>&#x00DE</samp></td>
+			<th scope="row"><code>#222</code></th>
+			<td><samp>&#222;</samp></td>
+			<td><samp>&#222</samp></td>
+			<th scope="row"><code>THORN</code></th>
+			<td><a href="http://example.org/?test&THORN;=0"><samp>&THORN;</samp></a></td>
+			<td><a href="http://example.org/?test&THORN=1"><samp>&THORN</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00DF</code></th>
+			<td><samp>&#x00DF;</samp></td>
+			<td><samp>&#x00DF</samp></td>
+			<th scope="row"><code>#223</code></th>
+			<td><samp>&#223;</samp></td>
+			<td><samp>&#223</samp></td>
+			<th scope="row"><code>szlig</code></th>
+			<td><a href="http://example.org/?test&szlig;=0"><samp>&szlig;</samp></a></td>
+			<td><a href="http://example.org/?test&szlig=1"><samp>&szlig</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00E0</code></th>
+			<td><samp>&#x00E0;</samp></td>
+			<td><samp>&#x00E0</samp></td>
+			<th scope="row"><code>#224</code></th>
+			<td><samp>&#224;</samp></td>
+			<td><samp>&#224</samp></td>
+			<th scope="row"><code>agrave</code></th>
+			<td><a href="http://example.org/?test&agrave;=0"><samp>&agrave;</samp></a></td>
+			<td><a href="http://example.org/?test&agrave=1"><samp>&agrave</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00E1</code></th>
+			<td><samp>&#x00E1;</samp></td>
+			<td><samp>&#x00E1</samp></td>
+			<th scope="row"><code>#225</code></th>
+			<td><samp>&#225;</samp></td>
+			<td><samp>&#225</samp></td>
+			<th scope="row"><code>aacute</code></th>
+			<td><a href="http://example.org/?test&aacute;=0"><samp>&aacute;</samp></a></td>
+			<td><a href="http://example.org/?test&aacute=1"><samp>&aacute</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00E2</code></th>
+			<td><samp>&#x00E2;</samp></td>
+			<td><samp>&#x00E2</samp></td>
+			<th scope="row"><code>#226</code></th>
+			<td><samp>&#226;</samp></td>
+			<td><samp>&#226</samp></td>
+			<th scope="row"><code>acirc</code></th>
+			<td><a href="http://example.org/?test&acirc;=0"><samp>&acirc;</samp></a></td>
+			<td><a href="http://example.org/?test&acirc=1"><samp>&acirc</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00E3</code></th>
+			<td><samp>&#x00E3;</samp></td>
+			<td><samp>&#x00E3</samp></td>
+			<th scope="row"><code>#227</code></th>
+			<td><samp>&#227;</samp></td>
+			<td><samp>&#227</samp></td>
+			<th scope="row"><code>atilde</code></th>
+			<td><a href="http://example.org/?test&atilde;=0"><samp>&atilde;</samp></a></td>
+			<td><a href="http://example.org/?test&atilde=1"><samp>&atilde</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00E4</code></th>
+			<td><samp>&#x00E4;</samp></td>
+			<td><samp>&#x00E4</samp></td>
+			<th scope="row"><code>#228</code></th>
+			<td><samp>&#228;</samp></td>
+			<td><samp>&#228</samp></td>
+			<th scope="row"><code>auml</code></th>
+			<td><a href="http://example.org/?test&auml;=0"><samp>&auml;</samp></a></td>
+			<td><a href="http://example.org/?test&auml=1"><samp>&auml</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00E5</code></th>
+			<td><samp>&#x00E5;</samp></td>
+			<td><samp>&#x00E5</samp></td>
+			<th scope="row"><code>#229</code></th>
+			<td><samp>&#229;</samp></td>
+			<td><samp>&#229</samp></td>
+			<th scope="row"><code>aring</code></th>
+			<td><a href="http://example.org/?test&aring;=0"><samp>&aring;</samp></a></td>
+			<td><a href="http://example.org/?test&aring=1"><samp>&aring</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00E6</code></th>
+			<td><samp>&#x00E6;</samp></td>
+			<td><samp>&#x00E6</samp></td>
+			<th scope="row"><code>#230</code></th>
+			<td><samp>&#230;</samp></td>
+			<td><samp>&#230</samp></td>
+			<th scope="row"><code>aelig</code></th>
+			<td><a href="http://example.org/?test&aelig;=0"><samp>&aelig;</samp></a></td>
+			<td><a href="http://example.org/?test&aelig=1"><samp>&aelig</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00E7</code></th>
+			<td><samp>&#x00E7;</samp></td>
+			<td><samp>&#x00E7</samp></td>
+			<th scope="row"><code>#231</code></th>
+			<td><samp>&#231;</samp></td>
+			<td><samp>&#231</samp></td>
+			<th scope="row"><code>ccedil</code></th>
+			<td><a href="http://example.org/?test&ccedil;=0"><samp>&ccedil;</samp></a></td>
+			<td><a href="http://example.org/?test&ccedil=1"><samp>&ccedil</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00E8</code></th>
+			<td><samp>&#x00E8;</samp></td>
+			<td><samp>&#x00E8</samp></td>
+			<th scope="row"><code>#232</code></th>
+			<td><samp>&#232;</samp></td>
+			<td><samp>&#232</samp></td>
+			<th scope="row"><code>egrave</code></th>
+			<td><a href="http://example.org/?test&egrave;=0"><samp>&egrave;</samp></a></td>
+			<td><a href="http://example.org/?test&egrave=1"><samp>&egrave</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00E9</code></th>
+			<td><samp>&#x00E9;</samp></td>
+			<td><samp>&#x00E9</samp></td>
+			<th scope="row"><code>#233</code></th>
+			<td><samp>&#233;</samp></td>
+			<td><samp>&#233</samp></td>
+			<th scope="row"><code>eacute</code></th>
+			<td><a href="http://example.org/?test&eacute;=0"><samp>&eacute;</samp></a></td>
+			<td><a href="http://example.org/?test&eacute=1"><samp>&eacute</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00EA</code></th>
+			<td><samp>&#x00EA;</samp></td>
+			<td><samp>&#x00EA</samp></td>
+			<th scope="row"><code>#234</code></th>
+			<td><samp>&#234;</samp></td>
+			<td><samp>&#234</samp></td>
+			<th scope="row"><code>ecirc</code></th>
+			<td><a href="http://example.org/?test&ecirc;=0"><samp>&ecirc;</samp></a></td>
+			<td><a href="http://example.org/?test&ecirc=1"><samp>&ecirc</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00EB</code></th>
+			<td><samp>&#x00EB;</samp></td>
+			<td><samp>&#x00EB</samp></td>
+			<th scope="row"><code>#235</code></th>
+			<td><samp>&#235;</samp></td>
+			<td><samp>&#235</samp></td>
+			<th scope="row"><code>euml</code></th>
+			<td><a href="http://example.org/?test&euml;=0"><samp>&euml;</samp></a></td>
+			<td><a href="http://example.org/?test&euml=1"><samp>&euml</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00EC</code></th>
+			<td><samp>&#x00EC;</samp></td>
+			<td><samp>&#x00EC</samp></td>
+			<th scope="row"><code>#236</code></th>
+			<td><samp>&#236;</samp></td>
+			<td><samp>&#236</samp></td>
+			<th scope="row"><code>igrave</code></th>
+			<td><a href="http://example.org/?test&igrave;=0"><samp>&igrave;</samp></a></td>
+			<td><a href="http://example.org/?test&igrave=1"><samp>&igrave</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00ED</code></th>
+			<td><samp>&#x00ED;</samp></td>
+			<td><samp>&#x00ED</samp></td>
+			<th scope="row"><code>#237</code></th>
+			<td><samp>&#237;</samp></td>
+			<td><samp>&#237</samp></td>
+			<th scope="row"><code>iacute</code></th>
+			<td><a href="http://example.org/?test&iacute;=0"><samp>&iacute;</samp></a></td>
+			<td><a href="http://example.org/?test&iacute=1"><samp>&iacute</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00EE</code></th>
+			<td><samp>&#x00EE;</samp></td>
+			<td><samp>&#x00EE</samp></td>
+			<th scope="row"><code>#238</code></th>
+			<td><samp>&#238;</samp></td>
+			<td><samp>&#238</samp></td>
+			<th scope="row"><code>icirc</code></th>
+			<td><a href="http://example.org/?test&icirc;=0"><samp>&icirc;</samp></a></td>
+			<td><a href="http://example.org/?test&icirc=1"><samp>&icirc</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00EF</code></th>
+			<td><samp>&#x00EF;</samp></td>
+			<td><samp>&#x00EF</samp></td>
+			<th scope="row"><code>#239</code></th>
+			<td><samp>&#239;</samp></td>
+			<td><samp>&#239</samp></td>
+			<th scope="row"><code>iuml</code></th>
+			<td><a href="http://example.org/?test&iuml;=0"><samp>&iuml;</samp></a></td>
+			<td><a href="http://example.org/?test&iuml=1"><samp>&iuml</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00F0</code></th>
+			<td><samp>&#x00F0;</samp></td>
+			<td><samp>&#x00F0</samp></td>
+			<th scope="row"><code>#240</code></th>
+			<td><samp>&#240;</samp></td>
+			<td><samp>&#240</samp></td>
+			<th scope="row"><code>eth</code></th>
+			<td><a href="http://example.org/?test&eth;=0"><samp>&eth;</samp></a></td>
+			<td><a href="http://example.org/?test&eth=1"><samp>&eth</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00F1</code></th>
+			<td><samp>&#x00F1;</samp></td>
+			<td><samp>&#x00F1</samp></td>
+			<th scope="row"><code>#241</code></th>
+			<td><samp>&#241;</samp></td>
+			<td><samp>&#241</samp></td>
+			<th scope="row"><code>ntilde</code></th>
+			<td><a href="http://example.org/?test&ntilde;=0"><samp>&ntilde;</samp></a></td>
+			<td><a href="http://example.org/?test&ntilde=1"><samp>&ntilde</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00F2</code></th>
+			<td><samp>&#x00F2;</samp></td>
+			<td><samp>&#x00F2</samp></td>
+			<th scope="row"><code>#242</code></th>
+			<td><samp>&#242;</samp></td>
+			<td><samp>&#242</samp></td>
+			<th scope="row"><code>ograve</code></th>
+			<td><a href="http://example.org/?test&ograve;=0"><samp>&ograve;</samp></a></td>
+			<td><a href="http://example.org/?test&ograve=1"><samp>&ograve</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00F3</code></th>
+			<td><samp>&#x00F3;</samp></td>
+			<td><samp>&#x00F3</samp></td>
+			<th scope="row"><code>#243</code></th>
+			<td><samp>&#243;</samp></td>
+			<td><samp>&#243</samp></td>
+			<th scope="row"><code>oacute</code></th>
+			<td><a href="http://example.org/?test&oacute;=0"><samp>&oacute;</samp></a></td>
+			<td><a href="http://example.org/?test&oacute=1"><samp>&oacute</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00F4</code></th>
+			<td><samp>&#x00F4;</samp></td>
+			<td><samp>&#x00F4</samp></td>
+			<th scope="row"><code>#244</code></th>
+			<td><samp>&#244;</samp></td>
+			<td><samp>&#244</samp></td>
+			<th scope="row"><code>ocirc</code></th>
+			<td><a href="http://example.org/?test&ocirc;=0"><samp>&ocirc;</samp></a></td>
+			<td><a href="http://example.org/?test&ocirc=1"><samp>&ocirc</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00F5</code></th>
+			<td><samp>&#x00F5;</samp></td>
+			<td><samp>&#x00F5</samp></td>
+			<th scope="row"><code>#245</code></th>
+			<td><samp>&#245;</samp></td>
+			<td><samp>&#245</samp></td>
+			<th scope="row"><code>otilde</code></th>
+			<td><a href="http://example.org/?test&otilde;=0"><samp>&otilde;</samp></a></td>
+			<td><a href="http://example.org/?test&otilde=1"><samp>&otilde</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00F6</code></th>
+			<td><samp>&#x00F6;</samp></td>
+			<td><samp>&#x00F6</samp></td>
+			<th scope="row"><code>#246</code></th>
+			<td><samp>&#246;</samp></td>
+			<td><samp>&#246</samp></td>
+			<th scope="row"><code>ouml</code></th>
+			<td><a href="http://example.org/?test&ouml;=0"><samp>&ouml;</samp></a></td>
+			<td><a href="http://example.org/?test&ouml=1"><samp>&ouml</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00F7</code></th>
+			<td><samp>&#x00F7;</samp></td>
+			<td><samp>&#x00F7</samp></td>
+			<th scope="row"><code>#247</code></th>
+			<td><samp>&#247;</samp></td>
+			<td><samp>&#247</samp></td>
+			<th scope="row"><code>divide</code></th>
+			<td><a href="http://example.org/?test&divide;=0"><samp>&divide;</samp></a></td>
+			<td><a href="http://example.org/?test&divide=1"><samp>&divide</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00F8</code></th>
+			<td><samp>&#x00F8;</samp></td>
+			<td><samp>&#x00F8</samp></td>
+			<th scope="row"><code>#248</code></th>
+			<td><samp>&#248;</samp></td>
+			<td><samp>&#248</samp></td>
+			<th scope="row"><code>oslash</code></th>
+			<td><a href="http://example.org/?test&oslash;=0"><samp>&oslash;</samp></a></td>
+			<td><a href="http://example.org/?test&oslash=1"><samp>&oslash</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00F9</code></th>
+			<td><samp>&#x00F9;</samp></td>
+			<td><samp>&#x00F9</samp></td>
+			<th scope="row"><code>#249</code></th>
+			<td><samp>&#249;</samp></td>
+			<td><samp>&#249</samp></td>
+			<th scope="row"><code>ugrave</code></th>
+			<td><a href="http://example.org/?test&ugrave;=0"><samp>&ugrave;</samp></a></td>
+			<td><a href="http://example.org/?test&ugrave=1"><samp>&ugrave</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00FA</code></th>
+			<td><samp>&#x00FA;</samp></td>
+			<td><samp>&#x00FA</samp></td>
+			<th scope="row"><code>#250</code></th>
+			<td><samp>&#250;</samp></td>
+			<td><samp>&#250</samp></td>
+			<th scope="row"><code>uacute</code></th>
+			<td><a href="http://example.org/?test&uacute;=0"><samp>&uacute;</samp></a></td>
+			<td><a href="http://example.org/?test&uacute=1"><samp>&uacute</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00FB</code></th>
+			<td><samp>&#x00FB;</samp></td>
+			<td><samp>&#x00FB</samp></td>
+			<th scope="row"><code>#251</code></th>
+			<td><samp>&#251;</samp></td>
+			<td><samp>&#251</samp></td>
+			<th scope="row"><code>ucirc</code></th>
+			<td><a href="http://example.org/?test&ucirc;=0"><samp>&ucirc;</samp></a></td>
+			<td><a href="http://example.org/?test&ucirc=1"><samp>&ucirc</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00FC</code></th>
+			<td><samp>&#x00FC;</samp></td>
+			<td><samp>&#x00FC</samp></td>
+			<th scope="row"><code>#252</code></th>
+			<td><samp>&#252;</samp></td>
+			<td><samp>&#252</samp></td>
+			<th scope="row"><code>uuml</code></th>
+			<td><a href="http://example.org/?test&uuml;=0"><samp>&uuml;</samp></a></td>
+			<td><a href="http://example.org/?test&uuml=1"><samp>&uuml</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00FD</code></th>
+			<td><samp>&#x00FD;</samp></td>
+			<td><samp>&#x00FD</samp></td>
+			<th scope="row"><code>#253</code></th>
+			<td><samp>&#253;</samp></td>
+			<td><samp>&#253</samp></td>
+			<th scope="row"><code>yacute</code></th>
+			<td><a href="http://example.org/?test&yacute;=0"><samp>&yacute;</samp></a></td>
+			<td><a href="http://example.org/?test&yacute=1"><samp>&yacute</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00FE</code></th>
+			<td><samp>&#x00FE;</samp></td>
+			<td><samp>&#x00FE</samp></td>
+			<th scope="row"><code>#254</code></th>
+			<td><samp>&#254;</samp></td>
+			<td><samp>&#254</samp></td>
+			<th scope="row"><code>thorn</code></th>
+			<td><a href="http://example.org/?test&thorn;=0"><samp>&thorn;</samp></a></td>
+			<td><a href="http://example.org/?test&thorn=1"><samp>&thorn</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+00FF</code></th>
+			<td><samp>&#x00FF;</samp></td>
+			<td><samp>&#x00FF</samp></td>
+			<th scope="row"><code>#255</code></th>
+			<td><samp>&#255;</samp></td>
+			<td><samp>&#255</samp></td>
+			<th scope="row"><code>yuml</code></th>
+			<td><a href="http://example.org/?test&yuml;=0"><samp>&yuml;</samp></a></td>
+			<td><a href="http://example.org/?test&yuml=1"><samp>&yuml</samp></a></td>
+		</tr>
+	</tbody>
+</table>
+
+<h2 id="sym">Symbols, Mathematical Symbols, and Greek Letters</h2>
+<table>
+	<colgroup class="hex" title="Hexadecimal Character Reference">
+		<col class="codepoint">
+		<col class="withrefc">
+		<col class="withoutrefc">
+	</colgroup>
+	<colgroup class="numeric" title="Numeric Character Reference">
+		<col class="codepoint">
+		<col class="withrefc">
+		<col class="withoutrefc">
+	</colgroup>
+	<colgroup class="entity" title="Entity References">
+		<col class="codepoint">
+		<col class="withrefc">
+		<col class="withoutrefc">
+	</colgroup>
+	<thead>
+		<tr>
+			<th colspan="3">Hex</th>
+			<th colspan="3">Numeric</th>
+			<th colspan="3">Entity Reference</th>
+		</tr>
+		<tr>
+			<th>Code Point</th>
+			<th>with <code>REFC</code></th>
+			<th>without <code>REFC</code></th>
+			<th>Code Point</th>
+			<th>with <code>REFC</code></th>
+			<th>without <code>REFC</code></th>
+			<th>Entity Name</th>
+			<th>with <code>REFC</code></th>
+			<th>without <code>REFC</code></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th scope="row"><code>U+0192</code></th>
+			<td><samp>&#x0192;</samp></td>
+			<td><samp>&#x0192</samp></td>
+			<th scope="row"><code>#402</code></th>
+			<td><samp>&#402;</samp></td>
+			<td><samp>&#402</samp></td>
+			<th scope="row"><code>fnof</code></th>
+			<td><a href="http://example.org/?test&fnof;=0"><samp>&fnof;</samp></a></td>
+			<td><a href="http://example.org/?test&fnof=1"><samp>&fnof</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+0391</code></th>
+			<td><samp>&#x0391;</samp></td>
+			<td><samp>&#x0391</samp></td>
+			<th scope="row"><code>#913</code></th>
+			<td><samp>&#913;</samp></td>
+			<td><samp>&#913</samp></td>
+			<th scope="row"><code>Alpha</code></th>
+			<td><a href="http://example.org/?test&Alpha;=0"><samp>&Alpha;</samp></a></td>
+			<td><a href="http://example.org/?test&Alpha=1"><samp>&Alpha</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+0392</code></th>
+			<td><samp>&#x0392;</samp></td>
+			<td><samp>&#x0392</samp></td>
+			<th scope="row"><code>#914</code></th>
+			<td><samp>&#914;</samp></td>
+			<td><samp>&#914</samp></td>
+			<th scope="row"><code>Beta</code></th>
+			<td><a href="http://example.org/?test&Beta;=0"><samp>&Beta;</samp></a></td>
+			<td><a href="http://example.org/?test&Beta=1"><samp>&Beta</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+0393</code></th>
+			<td><samp>&#x0393;</samp></td>
+			<td><samp>&#x0393</samp></td>
+			<th scope="row"><code>#915</code></th>
+			<td><samp>&#915;</samp></td>
+			<td><samp>&#915</samp></td>
+			<th scope="row"><code>Gamma</code></th>
+			<td><a href="http://example.org/?test&Gamma;=0"><samp>&Gamma;</samp></a></td>
+			<td><a href="http://example.org/?test&Gamma=1"><samp>&Gamma</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+0394</code></th>
+			<td><samp>&#x0394;</samp></td>
+			<td><samp>&#x0394</samp></td>
+			<th scope="row"><code>#916</code></th>
+			<td><samp>&#916;</samp></td>
+			<td><samp>&#916</samp></td>
+			<th scope="row"><code>Delta</code></th>
+			<td><a href="http://example.org/?test&Delta;=0"><samp>&Delta;</samp></a></td>
+			<td><a href="http://example.org/?test&Delta=1"><samp>&Delta</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+0395</code></th>
+			<td><samp>&#x0395;</samp></td>
+			<td><samp>&#x0395</samp></td>
+			<th scope="row"><code>#917</code></th>
+			<td><samp>&#917;</samp></td>
+			<td><samp>&#917</samp></td>
+			<th scope="row"><code>Epsilon</code></th>
+			<td><a href="http://example.org/?test&Epsilon;=0"><samp>&Epsilon;</samp></a></td>
+			<td><a href="http://example.org/?test&Epsilon=1"><samp>&Epsilon</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+0396</code></th>
+			<td><samp>&#x0396;</samp></td>
+			<td><samp>&#x0396</samp></td>
+			<th scope="row"><code>#918</code></th>
+			<td><samp>&#918;</samp></td>
+			<td><samp>&#918</samp></td>
+			<th scope="row"><code>Zeta</code></th>
+			<td><a href="http://example.org/?test&Zeta;=0"><samp>&Zeta;</samp></a></td>
+			<td><a href="http://example.org/?test&Zeta=1"><samp>&Zeta</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+0397</code></th>
+			<td><samp>&#x0397;</samp></td>
+			<td><samp>&#x0397</samp></td>
+			<th scope="row"><code>#919</code></th>
+			<td><samp>&#919;</samp></td>
+			<td><samp>&#919</samp></td>
+			<th scope="row"><code>Eta</code></th>
+			<td><a href="http://example.org/?test&Eta;=0"><samp>&Eta;</samp></a></td>
+			<td><a href="http://example.org/?test&Eta=1"><samp>&Eta</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+0398</code></th>
+			<td><samp>&#x0398;</samp></td>
+			<td><samp>&#x0398</samp></td>
+			<th scope="row"><code>#920</code></th>
+			<td><samp>&#920;</samp></td>
+			<td><samp>&#920</samp></td>
+			<th scope="row"><code>Theta</code></th>
+			<td><a href="http://example.org/?test&Theta;=0"><samp>&Theta;</samp></a></td>
+			<td><a href="http://example.org/?test&Theta=1"><samp>&Theta</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+0399</code></th>
+			<td><samp>&#x0399;</samp></td>
+			<td><samp>&#x0399</samp></td>
+			<th scope="row"><code>#921</code></th>
+			<td><samp>&#921;</samp></td>
+			<td><samp>&#921</samp></td>
+			<th scope="row"><code>Iota</code></th>
+			<td><a href="http://example.org/?test&Iota;=0"><samp>&Iota;</samp></a></td>
+			<td><a href="http://example.org/?test&Iota=1"><samp>&Iota</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+039A</code></th>
+			<td><samp>&#x039A;</samp></td>
+			<td><samp>&#x039A</samp></td>
+			<th scope="row"><code>#922</code></th>
+			<td><samp>&#922;</samp></td>
+			<td><samp>&#922</samp></td>
+			<th scope="row"><code>Kappa</code></th>
+			<td><a href="http://example.org/?test&Kappa;=0"><samp>&Kappa;</samp></a></td>
+			<td><a href="http://example.org/?test&Kappa=1"><samp>&Kappa</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+039B</code></th>
+			<td><samp>&#x039B;</samp></td>
+			<td><samp>&#x039B</samp></td>
+			<th scope="row"><code>#923</code></th>
+			<td><samp>&#923;</samp></td>
+			<td><samp>&#923</samp></td>
+			<th scope="row"><code>Lambda</code></th>
+			<td><a href="http://example.org/?test&Lambda;=0"><samp>&Lambda;</samp></a></td>
+			<td><a href="http://example.org/?test&Lambda=1"><samp>&Lambda</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+039C</code></th>
+			<td><samp>&#x039C;</samp></td>
+			<td><samp>&#x039C</samp></td>
+			<th scope="row"><code>#924</code></th>
+			<td><samp>&#924;</samp></td>
+			<td><samp>&#924</samp></td>
+			<th scope="row"><code>Mu</code></th>
+			<td><a href="http://example.org/?test&Mu;=0"><samp>&Mu;</samp></a></td>
+			<td><a href="http://example.org/?test&Mu=1"><samp>&Mu</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+039D</code></th>
+			<td><samp>&#x039D;</samp></td>
+			<td><samp>&#x039D</samp></td>
+			<th scope="row"><code>#925</code></th>
+			<td><samp>&#925;</samp></td>
+			<td><samp>&#925</samp></td>
+			<th scope="row"><code>Nu</code></th>
+			<td><a href="http://example.org/?test&Nu;=0"><samp>&Nu;</samp></a></td>
+			<td><a href="http://example.org/?test&Nu=1"><samp>&Nu</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+039E</code></th>
+			<td><samp>&#x039E;</samp></td>
+			<td><samp>&#x039E</samp></td>
+			<th scope="row"><code>#926</code></th>
+			<td><samp>&#926;</samp></td>
+			<td><samp>&#926</samp></td>
+			<th scope="row"><code>Xi</code></th>
+			<td><a href="http://example.org/?test&Xi;=0"><samp>&Xi;</samp></a></td>
+			<td><a href="http://example.org/?test&Xi=1"><samp>&Xi</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+039F</code></th>
+			<td><samp>&#x039F;</samp></td>
+			<td><samp>&#x039F</samp></td>
+			<th scope="row"><code>#927</code></th>
+			<td><samp>&#927;</samp></td>
+			<td><samp>&#927</samp></td>
+			<th scope="row"><code>Omicron</code></th>
+			<td><a href="http://example.org/?test&Omicron;=0"><samp>&Omicron;</samp></a></td>
+			<td><a href="http://example.org/?test&Omicron=1"><samp>&Omicron</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+03A0</code></th>
+			<td><samp>&#x03A0;</samp></td>
+			<td><samp>&#x03A0</samp></td>
+			<th scope="row"><code>#928</code></th>
+			<td><samp>&#928;</samp></td>
+			<td><samp>&#928</samp></td>
+			<th scope="row"><code>Pi</code></th>
+			<td><a href="http://example.org/?test&Pi;=0"><samp>&Pi;</samp></a></td>
+			<td><a href="http://example.org/?test&Pi=1"><samp>&Pi</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+03A1</code></th>
+			<td><samp>&#x03A1;</samp></td>
+			<td><samp>&#x03A1</samp></td>
+			<th scope="row"><code>#929</code></th>
+			<td><samp>&#929;</samp></td>
+			<td><samp>&#929</samp></td>
+			<th scope="row"><code>Rho</code></th>
+			<td><a href="http://example.org/?test&Rho;=0"><samp>&Rho;</samp></a></td>
+			<td><a href="http://example.org/?test&Rho=1"><samp>&Rho</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+03A3</code></th>
+			<td><samp>&#x03A3;</samp></td>
+			<td><samp>&#x03A3</samp></td>
+			<th scope="row"><code>#931</code></th>
+			<td><samp>&#931;</samp></td>
+			<td><samp>&#931</samp></td>
+			<th scope="row"><code>Sigma</code></th>
+			<td><a href="http://example.org/?test&Sigma;=0"><samp>&Sigma;</samp></a></td>
+			<td><a href="http://example.org/?test&Sigma=1"><samp>&Sigma</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+03A4</code></th>
+			<td><samp>&#x03A4;</samp></td>
+			<td><samp>&#x03A4</samp></td>
+			<th scope="row"><code>#932</code></th>
+			<td><samp>&#932;</samp></td>
+			<td><samp>&#932</samp></td>
+			<th scope="row"><code>Tau</code></th>
+			<td><a href="http://example.org/?test&Tau;=0"><samp>&Tau;</samp></a></td>
+			<td><a href="http://example.org/?test&Tau=1"><samp>&Tau</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+03A5</code></th>
+			<td><samp>&#x03A5;</samp></td>
+			<td><samp>&#x03A5</samp></td>
+			<th scope="row"><code>#933</code></th>
+			<td><samp>&#933;</samp></td>
+			<td><samp>&#933</samp></td>
+			<th scope="row"><code>Upsilon</code></th>
+			<td><a href="http://example.org/?test&Upsilon;=0"><samp>&Upsilon;</samp></a></td>
+			<td><a href="http://example.org/?test&Upsilon=1"><samp>&Upsilon</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+03A6</code></th>
+			<td><samp>&#x03A6;</samp></td>
+			<td><samp>&#x03A6</samp></td>
+			<th scope="row"><code>#934</code></th>
+			<td><samp>&#934;</samp></td>
+			<td><samp>&#934</samp></td>
+			<th scope="row"><code>Phi</code></th>
+			<td><a href="http://example.org/?test&Phi;=0"><samp>&Phi;</samp></a></td>
+			<td><a href="http://example.org/?test&Phi=1"><samp>&Phi</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+03A7</code></th>
+			<td><samp>&#x03A7;</samp></td>
+			<td><samp>&#x03A7</samp></td>
+			<th scope="row"><code>#935</code></th>
+			<td><samp>&#935;</samp></td>
+			<td><samp>&#935</samp></td>
+			<th scope="row"><code>Chi</code></th>
+			<td><a href="http://example.org/?test&Chi;=0"><samp>&Chi;</samp></a></td>
+			<td><a href="http://example.org/?test&Chi=1"><samp>&Chi</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+03A8</code></th>
+			<td><samp>&#x03A8;</samp></td>
+			<td><samp>&#x03A8</samp></td>
+			<th scope="row"><code>#936</code></th>
+			<td><samp>&#936;</samp></td>
+			<td><samp>&#936</samp></td>
+			<th scope="row"><code>Psi</code></th>
+			<td><a href="http://example.org/?test&Psi;=0"><samp>&Psi;</samp></a></td>
+			<td><a href="http://example.org/?test&Psi=1"><samp>&Psi</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+03A9</code></th>
+			<td><samp>&#x03A9;</samp></td>
+			<td><samp>&#x03A9</samp></td>
+			<th scope="row"><code>#937</code></th>
+			<td><samp>&#937;</samp></td>
+			<td><samp>&#937</samp></td>
+			<th scope="row"><code>Omega</code></th>
+			<td><a href="http://example.org/?test&Omega;=0"><samp>&Omega;</samp></a></td>
+			<td><a href="http://example.org/?test&Omega=1"><samp>&Omega</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+03B1</code></th>
+			<td><samp>&#x03B1;</samp></td>
+			<td><samp>&#x03B1</samp></td>
+			<th scope="row"><code>#945</code></th>
+			<td><samp>&#945;</samp></td>
+			<td><samp>&#945</samp></td>
+			<th scope="row"><code>alpha</code></th>
+			<td><a href="http://example.org/?test&alpha;=0"><samp>&alpha;</samp></a></td>
+			<td><a href="http://example.org/?test&alpha=1"><samp>&alpha</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+03B2</code></th>
+			<td><samp>&#x03B2;</samp></td>
+			<td><samp>&#x03B2</samp></td>
+			<th scope="row"><code>#946</code></th>
+			<td><samp>&#946;</samp></td>
+			<td><samp>&#946</samp></td>
+			<th scope="row"><code>beta</code></th>
+			<td><a href="http://example.org/?test&beta;=0"><samp>&beta;</samp></a></td>
+			<td><a href="http://example.org/?test&beta=1"><samp>&beta</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+03B3</code></th>
+			<td><samp>&#x03B3;</samp></td>
+			<td><samp>&#x03B3</samp></td>
+			<th scope="row"><code>#947</code></th>
+			<td><samp>&#947;</samp></td>
+			<td><samp>&#947</samp></td>
+			<th scope="row"><code>gamma</code></th>
+			<td><a href="http://example.org/?test&gamma;=0"><samp>&gamma;</samp></a></td>
+			<td><a href="http://example.org/?test&gamma=1"><samp>&gamma</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+03B4</code></th>
+			<td><samp>&#x03B4;</samp></td>
+			<td><samp>&#x03B4</samp></td>
+			<th scope="row"><code>#948</code></th>
+			<td><samp>&#948;</samp></td>
+			<td><samp>&#948</samp></td>
+			<th scope="row"><code>delta</code></th>
+			<td><a href="http://example.org/?test&delta;=0"><samp>&delta;</samp></a></td>
+			<td><a href="http://example.org/?test&delta=1"><samp>&delta</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+03B5</code></th>
+			<td><samp>&#x03B5;</samp></td>
+			<td><samp>&#x03B5</samp></td>
+			<th scope="row"><code>#949</code></th>
+			<td><samp>&#949;</samp></td>
+			<td><samp>&#949</samp></td>
+			<th scope="row"><code>epsilon</code></th>
+			<td><a href="http://example.org/?test&epsilon;=0"><samp>&epsilon;</samp></a></td>
+			<td><a href="http://example.org/?test&epsilon=1"><samp>&epsilon</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+03B6</code></th>
+			<td><samp>&#x03B6;</samp></td>
+			<td><samp>&#x03B6</samp></td>
+			<th scope="row"><code>#950</code></th>
+			<td><samp>&#950;</samp></td>
+			<td><samp>&#950</samp></td>
+			<th scope="row"><code>zeta</code></th>
+			<td><a href="http://example.org/?test&zeta;=0"><samp>&zeta;</samp></a></td>
+			<td><a href="http://example.org/?test&zeta=1"><samp>&zeta</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+03B7</code></th>
+			<td><samp>&#x03B7;</samp></td>
+			<td><samp>&#x03B7</samp></td>
+			<th scope="row"><code>#951</code></th>
+			<td><samp>&#951;</samp></td>
+			<td><samp>&#951</samp></td>
+			<th scope="row"><code>eta</code></th>
+			<td><a href="http://example.org/?test&eta;=0"><samp>&eta;</samp></a></td>
+			<td><a href="http://example.org/?test&eta=1"><samp>&eta</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+03B8</code></th>
+			<td><samp>&#x03B8;</samp></td>
+			<td><samp>&#x03B8</samp></td>
+			<th scope="row"><code>#952</code></th>
+			<td><samp>&#952;</samp></td>
+			<td><samp>&#952</samp></td>
+			<th scope="row"><code>theta</code></th>
+			<td><a href="http://example.org/?test&theta;=0"><samp>&theta;</samp></a></td>
+			<td><a href="http://example.org/?test&theta=1"><samp>&theta</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+03B9</code></th>
+			<td><samp>&#x03B9;</samp></td>
+			<td><samp>&#x03B9</samp></td>
+			<th scope="row"><code>#953</code></th>
+			<td><samp>&#953;</samp></td>
+			<td><samp>&#953</samp></td>
+			<th scope="row"><code>iota</code></th>
+			<td><a href="http://example.org/?test&iota;=0"><samp>&iota;</samp></a></td>
+			<td><a href="http://example.org/?test&iota=1"><samp>&iota</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+03BA</code></th>
+			<td><samp>&#x03BA;</samp></td>
+			<td><samp>&#x03BA</samp></td>
+			<th scope="row"><code>#954</code></th>
+			<td><samp>&#954;</samp></td>
+			<td><samp>&#954</samp></td>
+			<th scope="row"><code>kappa</code></th>
+			<td><a href="http://example.org/?test&kappa;=0"><samp>&kappa;</samp></a></td>
+			<td><a href="http://example.org/?test&kappa=1"><samp>&kappa</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+03BB</code></th>
+			<td><samp>&#x03BB;</samp></td>
+			<td><samp>&#x03BB</samp></td>
+			<th scope="row"><code>#955</code></th>
+			<td><samp>&#955;</samp></td>
+			<td><samp>&#955</samp></td>
+			<th scope="row"><code>lambda</code></th>
+			<td><a href="http://example.org/?test&lambda;=0"><samp>&lambda;</samp></a></td>
+			<td><a href="http://example.org/?test&lambda=1"><samp>&lambda</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+03BC</code></th>
+			<td><samp>&#x03BC;</samp></td>
+			<td><samp>&#x03BC</samp></td>
+			<th scope="row"><code>#956</code></th>
+			<td><samp>&#956;</samp></td>
+			<td><samp>&#956</samp></td>
+			<th scope="row"><code>mu</code></th>
+			<td><a href="http://example.org/?test&mu;=0"><samp>&mu;</samp></a></td>
+			<td><a href="http://example.org/?test&mu=1"><samp>&mu</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+03BD</code></th>
+			<td><samp>&#x03BD;</samp></td>
+			<td><samp>&#x03BD</samp></td>
+			<th scope="row"><code>#957</code></th>
+			<td><samp>&#957;</samp></td>
+			<td><samp>&#957</samp></td>
+			<th scope="row"><code>nu</code></th>
+			<td><a href="http://example.org/?test&nu;=0"><samp>&nu;</samp></a></td>
+			<td><a href="http://example.org/?test&nu=1"><samp>&nu</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+03BE</code></th>
+			<td><samp>&#x03BE;</samp></td>
+			<td><samp>&#x03BE</samp></td>
+			<th scope="row"><code>#958</code></th>
+			<td><samp>&#958;</samp></td>
+			<td><samp>&#958</samp></td>
+			<th scope="row"><code>xi</code></th>
+			<td><a href="http://example.org/?test&xi;=0"><samp>&xi;</samp></a></td>
+			<td><a href="http://example.org/?test&xi=1"><samp>&xi</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+03BF</code></th>
+			<td><samp>&#x03BF;</samp></td>
+			<td><samp>&#x03BF</samp></td>
+			<th scope="row"><code>#959</code></th>
+			<td><samp>&#959;</samp></td>
+			<td><samp>&#959</samp></td>
+			<th scope="row"><code>omicron</code></th>
+			<td><a href="http://example.org/?test&omicron;=0"><samp>&omicron;</samp></a></td>
+			<td><a href="http://example.org/?test&omicron=1"><samp>&omicron</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+03C0</code></th>
+			<td><samp>&#x03C0;</samp></td>
+			<td><samp>&#x03C0</samp></td>
+			<th scope="row"><code>#960</code></th>
+			<td><samp>&#960;</samp></td>
+			<td><samp>&#960</samp></td>
+			<th scope="row"><code>pi</code></th>
+			<td><a href="http://example.org/?test&pi;=0"><samp>&pi;</samp></a></td>
+			<td><a href="http://example.org/?test&pi=1"><samp>&pi</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+03C1</code></th>
+			<td><samp>&#x03C1;</samp></td>
+			<td><samp>&#x03C1</samp></td>
+			<th scope="row"><code>#961</code></th>
+			<td><samp>&#961;</samp></td>
+			<td><samp>&#961</samp></td>
+			<th scope="row"><code>rho</code></th>
+			<td><a href="http://example.org/?test&rho;=0"><samp>&rho;</samp></a></td>
+			<td><a href="http://example.org/?test&rho=1"><samp>&rho</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+03C2</code></th>
+			<td><samp>&#x03C2;</samp></td>
+			<td><samp>&#x03C2</samp></td>
+			<th scope="row"><code>#962</code></th>
+			<td><samp>&#962;</samp></td>
+			<td><samp>&#962</samp></td>
+			<th scope="row"><code>sigmaf</code></th>
+			<td><a href="http://example.org/?test&sigmaf;=0"><samp>&sigmaf;</samp></a></td>
+			<td><a href="http://example.org/?test&sigmaf=1"><samp>&sigmaf</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+03C3</code></th>
+			<td><samp>&#x03C3;</samp></td>
+			<td><samp>&#x03C3</samp></td>
+			<th scope="row"><code>#963</code></th>
+			<td><samp>&#963;</samp></td>
+			<td><samp>&#963</samp></td>
+			<th scope="row"><code>sigma</code></th>
+			<td><a href="http://example.org/?test&sigma;=0"><samp>&sigma;</samp></a></td>
+			<td><a href="http://example.org/?test&sigma=1"><samp>&sigma</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+03C4</code></th>
+			<td><samp>&#x03C4;</samp></td>
+			<td><samp>&#x03C4</samp></td>
+			<th scope="row"><code>#964</code></th>
+			<td><samp>&#964;</samp></td>
+			<td><samp>&#964</samp></td>
+			<th scope="row"><code>tau</code></th>
+			<td><a href="http://example.org/?test&tau;=0"><samp>&tau;</samp></a></td>
+			<td><a href="http://example.org/?test&tau=1"><samp>&tau</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+03C5</code></th>
+			<td><samp>&#x03C5;</samp></td>
+			<td><samp>&#x03C5</samp></td>
+			<th scope="row"><code>#965</code></th>
+			<td><samp>&#965;</samp></td>
+			<td><samp>&#965</samp></td>
+			<th scope="row"><code>upsilon</code></th>
+			<td><a href="http://example.org/?test&upsilon;=0"><samp>&upsilon;</samp></a></td>
+			<td><a href="http://example.org/?test&upsilon=1"><samp>&upsilon</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+03C6</code></th>
+			<td><samp>&#x03C6;</samp></td>
+			<td><samp>&#x03C6</samp></td>
+			<th scope="row"><code>#966</code></th>
+			<td><samp>&#966;</samp></td>
+			<td><samp>&#966</samp></td>
+			<th scope="row"><code>phi</code></th>
+			<td><a href="http://example.org/?test&phi;=0"><samp>&phi;</samp></a></td>
+			<td><a href="http://example.org/?test&phi=1"><samp>&phi</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+03C7</code></th>
+			<td><samp>&#x03C7;</samp></td>
+			<td><samp>&#x03C7</samp></td>
+			<th scope="row"><code>#967</code></th>
+			<td><samp>&#967;</samp></td>
+			<td><samp>&#967</samp></td>
+			<th scope="row"><code>chi</code></th>
+			<td><a href="http://example.org/?test&chi;=0"><samp>&chi;</samp></a></td>
+			<td><a href="http://example.org/?test&chi=1"><samp>&chi</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+03C8</code></th>
+			<td><samp>&#x03C8;</samp></td>
+			<td><samp>&#x03C8</samp></td>
+			<th scope="row"><code>#968</code></th>
+			<td><samp>&#968;</samp></td>
+			<td><samp>&#968</samp></td>
+			<th scope="row"><code>psi</code></th>
+			<td><a href="http://example.org/?test&psi;=0"><samp>&psi;</samp></a></td>
+			<td><a href="http://example.org/?test&psi=1"><samp>&psi</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+03C9</code></th>
+			<td><samp>&#x03C9;</samp></td>
+			<td><samp>&#x03C9</samp></td>
+			<th scope="row"><code>#969</code></th>
+			<td><samp>&#969;</samp></td>
+			<td><samp>&#969</samp></td>
+			<th scope="row"><code>omega</code></th>
+			<td><a href="http://example.org/?test&omega;=0"><samp>&omega;</samp></a></td>
+			<td><a href="http://example.org/?test&omega=1"><samp>&omega</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+03D1</code></th>
+			<td><samp>&#x03D1;</samp></td>
+			<td><samp>&#x03D1</samp></td>
+			<th scope="row"><code>#977</code></th>
+			<td><samp>&#977;</samp></td>
+			<td><samp>&#977</samp></td>
+			<th scope="row"><code>thetasym</code></th>
+			<td><a href="http://example.org/?test&thetasym;=0"><samp>&thetasym;</samp></a></td>
+			<td><a href="http://example.org/?test&thetasym=1"><samp>&thetasym</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+03D2</code></th>
+			<td><samp>&#x03D2;</samp></td>
+			<td><samp>&#x03D2</samp></td>
+			<th scope="row"><code>#978</code></th>
+			<td><samp>&#978;</samp></td>
+			<td><samp>&#978</samp></td>
+			<th scope="row"><code>upsih</code></th>
+			<td><a href="http://example.org/?test&upsih;=0"><samp>&upsih;</samp></a></td>
+			<td><a href="http://example.org/?test&upsih=1"><samp>&upsih</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+03D6</code></th>
+			<td><samp>&#x03D6;</samp></td>
+			<td><samp>&#x03D6</samp></td>
+			<th scope="row"><code>#982</code></th>
+			<td><samp>&#982;</samp></td>
+			<td><samp>&#982</samp></td>
+			<th scope="row"><code>piv</code></th>
+			<td><a href="http://example.org/?test&piv;=0"><samp>&piv;</samp></a></td>
+			<td><a href="http://example.org/?test&piv=1"><samp>&piv</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+2022</code></th>
+			<td><samp>&#x2022;</samp></td>
+			<td><samp>&#x2022</samp></td>
+			<th scope="row"><code>#8226</code></th>
+			<td><samp>&#8226;</samp></td>
+			<td><samp>&#8226</samp></td>
+			<th scope="row"><code>bull</code></th>
+			<td><a href="http://example.org/?test&bull;=0"><samp>&bull;</samp></a></td>
+			<td><a href="http://example.org/?test&bull=1"><samp>&bull</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+2026</code></th>
+			<td><samp>&#x2026;</samp></td>
+			<td><samp>&#x2026</samp></td>
+			<th scope="row"><code>#8230</code></th>
+			<td><samp>&#8230;</samp></td>
+			<td><samp>&#8230</samp></td>
+			<th scope="row"><code>hellip</code></th>
+			<td><a href="http://example.org/?test&hellip;=0"><samp>&hellip;</samp></a></td>
+			<td><a href="http://example.org/?test&hellip=1"><samp>&hellip</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+2032</code></th>
+			<td><samp>&#x2032;</samp></td>
+			<td><samp>&#x2032</samp></td>
+			<th scope="row"><code>#8242</code></th>
+			<td><samp>&#8242;</samp></td>
+			<td><samp>&#8242</samp></td>
+			<th scope="row"><code>prime</code></th>
+			<td><a href="http://example.org/?test&prime;=0"><samp>&prime;</samp></a></td>
+			<td><a href="http://example.org/?test&prime=1"><samp>&prime</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+2033</code></th>
+			<td><samp>&#x2033;</samp></td>
+			<td><samp>&#x2033</samp></td>
+			<th scope="row"><code>#8243</code></th>
+			<td><samp>&#8243;</samp></td>
+			<td><samp>&#8243</samp></td>
+			<th scope="row"><code>Prime</code></th>
+			<td><a href="http://example.org/?test&Prime;=0"><samp>&Prime;</samp></a></td>
+			<td><a href="http://example.org/?test&Prime=1"><samp>&Prime</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+203E</code></th>
+			<td><samp>&#x203E;</samp></td>
+			<td><samp>&#x203E</samp></td>
+			<th scope="row"><code>#8254</code></th>
+			<td><samp>&#8254;</samp></td>
+			<td><samp>&#8254</samp></td>
+			<th scope="row"><code>oline</code></th>
+			<td><a href="http://example.org/?test&oline;=0"><samp>&oline;</samp></a></td>
+			<td><a href="http://example.org/?test&oline=1"><samp>&oline</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+2044</code></th>
+			<td><samp>&#x2044;</samp></td>
+			<td><samp>&#x2044</samp></td>
+			<th scope="row"><code>#8260</code></th>
+			<td><samp>&#8260;</samp></td>
+			<td><samp>&#8260</samp></td>
+			<th scope="row"><code>frasl</code></th>
+			<td><a href="http://example.org/?test&frasl;=0"><samp>&frasl;</samp></a></td>
+			<td><a href="http://example.org/?test&frasl=1"><samp>&frasl</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+2118</code></th>
+			<td><samp>&#x2118;</samp></td>
+			<td><samp>&#x2118</samp></td>
+			<th scope="row"><code>#8472</code></th>
+			<td><samp>&#8472;</samp></td>
+			<td><samp>&#8472</samp></td>
+			<th scope="row"><code>weierp</code></th>
+			<td><a href="http://example.org/?test&weierp;=0"><samp>&weierp;</samp></a></td>
+			<td><a href="http://example.org/?test&weierp=1"><samp>&weierp</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+2111</code></th>
+			<td><samp>&#x2111;</samp></td>
+			<td><samp>&#x2111</samp></td>
+			<th scope="row"><code>#8465</code></th>
+			<td><samp>&#8465;</samp></td>
+			<td><samp>&#8465</samp></td>
+			<th scope="row"><code>image</code></th>
+			<td><a href="http://example.org/?test&image;=0"><samp>&image;</samp></a></td>
+			<td><a href="http://example.org/?test&image=1"><samp>&image</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+211C</code></th>
+			<td><samp>&#x211C;</samp></td>
+			<td><samp>&#x211C</samp></td>
+			<th scope="row"><code>#8476</code></th>
+			<td><samp>&#8476;</samp></td>
+			<td><samp>&#8476</samp></td>
+			<th scope="row"><code>real</code></th>
+			<td><a href="http://example.org/?test&real;=0"><samp>&real;</samp></a></td>
+			<td><a href="http://example.org/?test&real=1"><samp>&real</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+2122</code></th>
+			<td><samp>&#x2122;</samp></td>
+			<td><samp>&#x2122</samp></td>
+			<th scope="row"><code>#8482</code></th>
+			<td><samp>&#8482;</samp></td>
+			<td><samp>&#8482</samp></td>
+			<th scope="row"><code>trade</code></th>
+			<td><a href="http://example.org/?test&trade;=0"><samp>&trade;</samp></a></td>
+			<td><a href="http://example.org/?test&trade=1"><samp>&trade</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+2135</code></th>
+			<td><samp>&#x2135;</samp></td>
+			<td><samp>&#x2135</samp></td>
+			<th scope="row"><code>#8501</code></th>
+			<td><samp>&#8501;</samp></td>
+			<td><samp>&#8501</samp></td>
+			<th scope="row"><code>alefsym</code></th>
+			<td><a href="http://example.org/?test&alefsym;=0"><samp>&alefsym;</samp></a></td>
+			<td><a href="http://example.org/?test&alefsym=1"><samp>&alefsym</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+2190</code></th>
+			<td><samp>&#x2190;</samp></td>
+			<td><samp>&#x2190</samp></td>
+			<th scope="row"><code>#8592</code></th>
+			<td><samp>&#8592;</samp></td>
+			<td><samp>&#8592</samp></td>
+			<th scope="row"><code>larr</code></th>
+			<td><a href="http://example.org/?test&larr;=0"><samp>&larr;</samp></a></td>
+			<td><a href="http://example.org/?test&larr=1"><samp>&larr</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+2191</code></th>
+			<td><samp>&#x2191;</samp></td>
+			<td><samp>&#x2191</samp></td>
+			<th scope="row"><code>#8593</code></th>
+			<td><samp>&#8593;</samp></td>
+			<td><samp>&#8593</samp></td>
+			<th scope="row"><code>uarr</code></th>
+			<td><a href="http://example.org/?test&uarr;=0"><samp>&uarr;</samp></a></td>
+			<td><a href="http://example.org/?test&uarr=1"><samp>&uarr</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+2192</code></th>
+			<td><samp>&#x2192;</samp></td>
+			<td><samp>&#x2192</samp></td>
+			<th scope="row"><code>#8594</code></th>
+			<td><samp>&#8594;</samp></td>
+			<td><samp>&#8594</samp></td>
+			<th scope="row"><code>rarr</code></th>
+			<td><a href="http://example.org/?test&rarr;=0"><samp>&rarr;</samp></a></td>
+			<td><a href="http://example.org/?test&rarr=1"><samp>&rarr</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+2193</code></th>
+			<td><samp>&#x2193;</samp></td>
+			<td><samp>&#x2193</samp></td>
+			<th scope="row"><code>#8595</code></th>
+			<td><samp>&#8595;</samp></td>
+			<td><samp>&#8595</samp></td>
+			<th scope="row"><code>darr</code></th>
+			<td><a href="http://example.org/?test&darr;=0"><samp>&darr;</samp></a></td>
+			<td><a href="http://example.org/?test&darr=1"><samp>&darr</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+2194</code></th>
+			<td><samp>&#x2194;</samp></td>
+			<td><samp>&#x2194</samp></td>
+			<th scope="row"><code>#8596</code></th>
+			<td><samp>&#8596;</samp></td>
+			<td><samp>&#8596</samp></td>
+			<th scope="row"><code>harr</code></th>
+			<td><a href="http://example.org/?test&harr;=0"><samp>&harr;</samp></a></td>
+			<td><a href="http://example.org/?test&harr=1"><samp>&harr</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+21B5</code></th>
+			<td><samp>&#x21B5;</samp></td>
+			<td><samp>&#x21B5</samp></td>
+			<th scope="row"><code>#8629</code></th>
+			<td><samp>&#8629;</samp></td>
+			<td><samp>&#8629</samp></td>
+			<th scope="row"><code>crarr</code></th>
+			<td><a href="http://example.org/?test&crarr;=0"><samp>&crarr;</samp></a></td>
+			<td><a href="http://example.org/?test&crarr=1"><samp>&crarr</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+21D0</code></th>
+			<td><samp>&#x21D0;</samp></td>
+			<td><samp>&#x21D0</samp></td>
+			<th scope="row"><code>#8656</code></th>
+			<td><samp>&#8656;</samp></td>
+			<td><samp>&#8656</samp></td>
+			<th scope="row"><code>lArr</code></th>
+			<td><a href="http://example.org/?test&lArr;=0"><samp>&lArr;</samp></a></td>
+			<td><a href="http://example.org/?test&lArr=1"><samp>&lArr</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+21D1</code></th>
+			<td><samp>&#x21D1;</samp></td>
+			<td><samp>&#x21D1</samp></td>
+			<th scope="row"><code>#8657</code></th>
+			<td><samp>&#8657;</samp></td>
+			<td><samp>&#8657</samp></td>
+			<th scope="row"><code>uArr</code></th>
+			<td><a href="http://example.org/?test&uArr;=0"><samp>&uArr;</samp></a></td>
+			<td><a href="http://example.org/?test&uArr=1"><samp>&uArr</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+21D2</code></th>
+			<td><samp>&#x21D2;</samp></td>
+			<td><samp>&#x21D2</samp></td>
+			<th scope="row"><code>#8658</code></th>
+			<td><samp>&#8658;</samp></td>
+			<td><samp>&#8658</samp></td>
+			<th scope="row"><code>rArr</code></th>
+			<td><a href="http://example.org/?test&rArr;=0"><samp>&rArr;</samp></a></td>
+			<td><a href="http://example.org/?test&rArr=1"><samp>&rArr</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+21D3</code></th>
+			<td><samp>&#x21D3;</samp></td>
+			<td><samp>&#x21D3</samp></td>
+			<th scope="row"><code>#8659</code></th>
+			<td><samp>&#8659;</samp></td>
+			<td><samp>&#8659</samp></td>
+			<th scope="row"><code>dArr</code></th>
+			<td><a href="http://example.org/?test&dArr;=0"><samp>&dArr;</samp></a></td>
+			<td><a href="http://example.org/?test&dArr=1"><samp>&dArr</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+21D4</code></th>
+			<td><samp>&#x21D4;</samp></td>
+			<td><samp>&#x21D4</samp></td>
+			<th scope="row"><code>#8660</code></th>
+			<td><samp>&#8660;</samp></td>
+			<td><samp>&#8660</samp></td>
+			<th scope="row"><code>hArr</code></th>
+			<td><a href="http://example.org/?test&hArr;=0"><samp>&hArr;</samp></a></td>
+			<td><a href="http://example.org/?test&hArr=1"><samp>&hArr</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+2200</code></th>
+			<td><samp>&#x2200;</samp></td>
+			<td><samp>&#x2200</samp></td>
+			<th scope="row"><code>#8704</code></th>
+			<td><samp>&#8704;</samp></td>
+			<td><samp>&#8704</samp></td>
+			<th scope="row"><code>forall</code></th>
+			<td><a href="http://example.org/?test&forall;=0"><samp>&forall;</samp></a></td>
+			<td><a href="http://example.org/?test&forall=1"><samp>&forall</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+2202</code></th>
+			<td><samp>&#x2202;</samp></td>
+			<td><samp>&#x2202</samp></td>
+			<th scope="row"><code>#8706</code></th>
+			<td><samp>&#8706;</samp></td>
+			<td><samp>&#8706</samp></td>
+			<th scope="row"><code>part</code></th>
+			<td><a href="http://example.org/?test&part;=0"><samp>&part;</samp></a></td>
+			<td><a href="http://example.org/?test&part=1"><samp>&part</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+2203</code></th>
+			<td><samp>&#x2203;</samp></td>
+			<td><samp>&#x2203</samp></td>
+			<th scope="row"><code>#8707</code></th>
+			<td><samp>&#8707;</samp></td>
+			<td><samp>&#8707</samp></td>
+			<th scope="row"><code>exist</code></th>
+			<td><a href="http://example.org/?test&exist;=0"><samp>&exist;</samp></a></td>
+			<td><a href="http://example.org/?test&exist=1"><samp>&exist</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+2205</code></th>
+			<td><samp>&#x2205;</samp></td>
+			<td><samp>&#x2205</samp></td>
+			<th scope="row"><code>#8709</code></th>
+			<td><samp>&#8709;</samp></td>
+			<td><samp>&#8709</samp></td>
+			<th scope="row"><code>empty</code></th>
+			<td><a href="http://example.org/?test&empty;=0"><samp>&empty;</samp></a></td>
+			<td><a href="http://example.org/?test&empty=1"><samp>&empty</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+2207</code></th>
+			<td><samp>&#x2207;</samp></td>
+			<td><samp>&#x2207</samp></td>
+			<th scope="row"><code>#8711</code></th>
+			<td><samp>&#8711;</samp></td>
+			<td><samp>&#8711</samp></td>
+			<th scope="row"><code>nabla</code></th>
+			<td><a href="http://example.org/?test&nabla;=0"><samp>&nabla;</samp></a></td>
+			<td><a href="http://example.org/?test&nabla=1"><samp>&nabla</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+2208</code></th>
+			<td><samp>&#x2208;</samp></td>
+			<td><samp>&#x2208</samp></td>
+			<th scope="row"><code>#8712</code></th>
+			<td><samp>&#8712;</samp></td>
+			<td><samp>&#8712</samp></td>
+			<th scope="row"><code>isin</code></th>
+			<td><a href="http://example.org/?test&isin;=0"><samp>&isin;</samp></a></td>
+			<td><a href="http://example.org/?test&isin=1"><samp>&isin</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+2209</code></th>
+			<td><samp>&#x2209;</samp></td>
+			<td><samp>&#x2209</samp></td>
+			<th scope="row"><code>#8713</code></th>
+			<td><samp>&#8713;</samp></td>
+			<td><samp>&#8713</samp></td>
+			<th scope="row"><code>notin</code></th>
+			<td><a href="http://example.org/?test&notin;=0"><samp>&notin;</samp></a></td>
+			<td><a href="http://example.org/?test&notin=1"><samp>&notin</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+220B</code></th>
+			<td><samp>&#x220B;</samp></td>
+			<td><samp>&#x220B</samp></td>
+			<th scope="row"><code>#8715</code></th>
+			<td><samp>&#8715;</samp></td>
+			<td><samp>&#8715</samp></td>
+			<th scope="row"><code>ni</code></th>
+			<td><a href="http://example.org/?test&ni;=0"><samp>&ni;</samp></a></td>
+			<td><a href="http://example.org/?test&ni=1"><samp>&ni</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+220F</code></th>
+			<td><samp>&#x220F;</samp></td>
+			<td><samp>&#x220F</samp></td>
+			<th scope="row"><code>#8719</code></th>
+			<td><samp>&#8719;</samp></td>
+			<td><samp>&#8719</samp></td>
+			<th scope="row"><code>prod</code></th>
+			<td><a href="http://example.org/?test&prod;=0"><samp>&prod;</samp></a></td>
+			<td><a href="http://example.org/?test&prod=1"><samp>&prod</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+2211</code></th>
+			<td><samp>&#x2211;</samp></td>
+			<td><samp>&#x2211</samp></td>
+			<th scope="row"><code>#8721</code></th>
+			<td><samp>&#8721;</samp></td>
+			<td><samp>&#8721</samp></td>
+			<th scope="row"><code>sum</code></th>
+			<td><a href="http://example.org/?test&sum;=0"><samp>&sum;</samp></a></td>
+			<td><a href="http://example.org/?test&sum=1"><samp>&sum</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+2212</code></th>
+			<td><samp>&#x2212;</samp></td>
+			<td><samp>&#x2212</samp></td>
+			<th scope="row"><code>#8722</code></th>
+			<td><samp>&#8722;</samp></td>
+			<td><samp>&#8722</samp></td>
+			<th scope="row"><code>minus</code></th>
+			<td><a href="http://example.org/?test&minus;=0"><samp>&minus;</samp></a></td>
+			<td><a href="http://example.org/?test&minus=1"><samp>&minus</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+2217</code></th>
+			<td><samp>&#x2217;</samp></td>
+			<td><samp>&#x2217</samp></td>
+			<th scope="row"><code>#8727</code></th>
+			<td><samp>&#8727;</samp></td>
+			<td><samp>&#8727</samp></td>
+			<th scope="row"><code>lowast</code></th>
+			<td><a href="http://example.org/?test&lowast;=0"><samp>&lowast;</samp></a></td>
+			<td><a href="http://example.org/?test&lowast=1"><samp>&lowast</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+221A</code></th>
+			<td><samp>&#x221A;</samp></td>
+			<td><samp>&#x221A</samp></td>
+			<th scope="row"><code>#8730</code></th>
+			<td><samp>&#8730;</samp></td>
+			<td><samp>&#8730</samp></td>
+			<th scope="row"><code>radic</code></th>
+			<td><a href="http://example.org/?test&radic;=0"><samp>&radic;</samp></a></td>
+			<td><a href="http://example.org/?test&radic=1"><samp>&radic</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+221D</code></th>
+			<td><samp>&#x221D;</samp></td>
+			<td><samp>&#x221D</samp></td>
+			<th scope="row"><code>#8733</code></th>
+			<td><samp>&#8733;</samp></td>
+			<td><samp>&#8733</samp></td>
+			<th scope="row"><code>prop</code></th>
+			<td><a href="http://example.org/?test&prop;=0"><samp>&prop;</samp></a></td>
+			<td><a href="http://example.org/?test&prop=1"><samp>&prop</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+221E</code></th>
+			<td><samp>&#x221E;</samp></td>
+			<td><samp>&#x221E</samp></td>
+			<th scope="row"><code>#8734</code></th>
+			<td><samp>&#8734;</samp></td>
+			<td><samp>&#8734</samp></td>
+			<th scope="row"><code>infin</code></th>
+			<td><a href="http://example.org/?test&infin;=0"><samp>&infin;</samp></a></td>
+			<td><a href="http://example.org/?test&infin=1"><samp>&infin</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+2220</code></th>
+			<td><samp>&#x2220;</samp></td>
+			<td><samp>&#x2220</samp></td>
+			<th scope="row"><code>#8736</code></th>
+			<td><samp>&#8736;</samp></td>
+			<td><samp>&#8736</samp></td>
+			<th scope="row"><code>ang</code></th>
+			<td><a href="http://example.org/?test&ang;=0"><samp>&ang;</samp></a></td>
+			<td><a href="http://example.org/?test&ang=1"><samp>&ang</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+2227</code></th>
+			<td><samp>&#x2227;</samp></td>
+			<td><samp>&#x2227</samp></td>
+			<th scope="row"><code>#8743</code></th>
+			<td><samp>&#8743;</samp></td>
+			<td><samp>&#8743</samp></td>
+			<th scope="row"><code>and</code></th>
+			<td><a href="http://example.org/?test&and;=0"><samp>&and;</samp></a></td>
+			<td><a href="http://example.org/?test&and=1"><samp>&and</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+2228</code></th>
+			<td><samp>&#x2228;</samp></td>
+			<td><samp>&#x2228</samp></td>
+			<th scope="row"><code>#8744</code></th>
+			<td><samp>&#8744;</samp></td>
+			<td><samp>&#8744</samp></td>
+			<th scope="row"><code>or</code></th>
+			<td><a href="http://example.org/?test&or;=0"><samp>&or;</samp></a></td>
+			<td><a href="http://example.org/?test&or=1"><samp>&or</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+2229</code></th>
+			<td><samp>&#x2229;</samp></td>
+			<td><samp>&#x2229</samp></td>
+			<th scope="row"><code>#8745</code></th>
+			<td><samp>&#8745;</samp></td>
+			<td><samp>&#8745</samp></td>
+			<th scope="row"><code>cap</code></th>
+			<td><a href="http://example.org/?test&cap;=0"><samp>&cap;</samp></a></td>
+			<td><a href="http://example.org/?test&cap=1"><samp>&cap</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+222A</code></th>
+			<td><samp>&#x222A;</samp></td>
+			<td><samp>&#x222A</samp></td>
+			<th scope="row"><code>#8746</code></th>
+			<td><samp>&#8746;</samp></td>
+			<td><samp>&#8746</samp></td>
+			<th scope="row"><code>cup</code></th>
+			<td><a href="http://example.org/?test&cup;=0"><samp>&cup;</samp></a></td>
+			<td><a href="http://example.org/?test&cup=1"><samp>&cup</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+222B</code></th>
+			<td><samp>&#x222B;</samp></td>
+			<td><samp>&#x222B</samp></td>
+			<th scope="row"><code>#8747</code></th>
+			<td><samp>&#8747;</samp></td>
+			<td><samp>&#8747</samp></td>
+			<th scope="row"><code>int</code></th>
+			<td><a href="http://example.org/?test&int;=0"><samp>&int;</samp></a></td>
+			<td><a href="http://example.org/?test&int=1"><samp>&int</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+2234</code></th>
+			<td><samp>&#x2234;</samp></td>
+			<td><samp>&#x2234</samp></td>
+			<th scope="row"><code>#8756</code></th>
+			<td><samp>&#8756;</samp></td>
+			<td><samp>&#8756</samp></td>
+			<th scope="row"><code>there4</code></th>
+			<td><a href="http://example.org/?test&there4;=0"><samp>&there4;</samp></a></td>
+			<td><a href="http://example.org/?test&there4=1"><samp>&there4</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+223C</code></th>
+			<td><samp>&#x223C;</samp></td>
+			<td><samp>&#x223C</samp></td>
+			<th scope="row"><code>#8764</code></th>
+			<td><samp>&#8764;</samp></td>
+			<td><samp>&#8764</samp></td>
+			<th scope="row"><code>sim</code></th>
+			<td><a href="http://example.org/?test&sim;=0"><samp>&sim;</samp></a></td>
+			<td><a href="http://example.org/?test&sim=1"><samp>&sim</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+2245</code></th>
+			<td><samp>&#x2245;</samp></td>
+			<td><samp>&#x2245</samp></td>
+			<th scope="row"><code>#8773</code></th>
+			<td><samp>&#8773;</samp></td>
+			<td><samp>&#8773</samp></td>
+			<th scope="row"><code>cong</code></th>
+			<td><a href="http://example.org/?test&cong;=0"><samp>&cong;</samp></a></td>
+			<td><a href="http://example.org/?test&cong=1"><samp>&cong</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+2248</code></th>
+			<td><samp>&#x2248;</samp></td>
+			<td><samp>&#x2248</samp></td>
+			<th scope="row"><code>#8776</code></th>
+			<td><samp>&#8776;</samp></td>
+			<td><samp>&#8776</samp></td>
+			<th scope="row"><code>asymp</code></th>
+			<td><a href="http://example.org/?test&asymp;=0"><samp>&asymp;</samp></a></td>
+			<td><a href="http://example.org/?test&asymp=1"><samp>&asymp</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+2260</code></th>
+			<td><samp>&#x2260;</samp></td>
+			<td><samp>&#x2260</samp></td>
+			<th scope="row"><code>#8800</code></th>
+			<td><samp>&#8800;</samp></td>
+			<td><samp>&#8800</samp></td>
+			<th scope="row"><code>ne</code></th>
+			<td><a href="http://example.org/?test&ne;=0"><samp>&ne;</samp></a></td>
+			<td><a href="http://example.org/?test&ne=1"><samp>&ne</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+2261</code></th>
+			<td><samp>&#x2261;</samp></td>
+			<td><samp>&#x2261</samp></td>
+			<th scope="row"><code>#8801</code></th>
+			<td><samp>&#8801;</samp></td>
+			<td><samp>&#8801</samp></td>
+			<th scope="row"><code>equiv</code></th>
+			<td><a href="http://example.org/?test&equiv;=0"><samp>&equiv;</samp></a></td>
+			<td><a href="http://example.org/?test&equiv=1"><samp>&equiv</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+2264</code></th>
+			<td><samp>&#x2264;</samp></td>
+			<td><samp>&#x2264</samp></td>
+			<th scope="row"><code>#8804</code></th>
+			<td><samp>&#8804;</samp></td>
+			<td><samp>&#8804</samp></td>
+			<th scope="row"><code>le</code></th>
+			<td><a href="http://example.org/?test&le;=0"><samp>&le;</samp></a></td>
+			<td><a href="http://example.org/?test&le=1"><samp>&le</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+2265</code></th>
+			<td><samp>&#x2265;</samp></td>
+			<td><samp>&#x2265</samp></td>
+			<th scope="row"><code>#8805</code></th>
+			<td><samp>&#8805;</samp></td>
+			<td><samp>&#8805</samp></td>
+			<th scope="row"><code>ge</code></th>
+			<td><a href="http://example.org/?test&ge;=0"><samp>&ge;</samp></a></td>
+			<td><a href="http://example.org/?test&ge=1"><samp>&ge</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+2282</code></th>
+			<td><samp>&#x2282;</samp></td>
+			<td><samp>&#x2282</samp></td>
+			<th scope="row"><code>#8834</code></th>
+			<td><samp>&#8834;</samp></td>
+			<td><samp>&#8834</samp></td>
+			<th scope="row"><code>sub</code></th>
+			<td><a href="http://example.org/?test&sub;=0"><samp>&sub;</samp></a></td>
+			<td><a href="http://example.org/?test&sub=1"><samp>&sub</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+2283</code></th>
+			<td><samp>&#x2283;</samp></td>
+			<td><samp>&#x2283</samp></td>
+			<th scope="row"><code>#8835</code></th>
+			<td><samp>&#8835;</samp></td>
+			<td><samp>&#8835</samp></td>
+			<th scope="row"><code>sup</code></th>
+			<td><a href="http://example.org/?test&sup;=0"><samp>&sup;</samp></a></td>
+			<td><a href="http://example.org/?test&sup=1"><samp>&sup</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+2284</code></th>
+			<td><samp>&#x2284;</samp></td>
+			<td><samp>&#x2284</samp></td>
+			<th scope="row"><code>#8836</code></th>
+			<td><samp>&#8836;</samp></td>
+			<td><samp>&#8836</samp></td>
+			<th scope="row"><code>nsub</code></th>
+			<td><a href="http://example.org/?test&nsub;=0"><samp>&nsub;</samp></a></td>
+			<td><a href="http://example.org/?test&nsub=1"><samp>&nsub</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+2286</code></th>
+			<td><samp>&#x2286;</samp></td>
+			<td><samp>&#x2286</samp></td>
+			<th scope="row"><code>#8838</code></th>
+			<td><samp>&#8838;</samp></td>
+			<td><samp>&#8838</samp></td>
+			<th scope="row"><code>sube</code></th>
+			<td><a href="http://example.org/?test&sube;=0"><samp>&sube;</samp></a></td>
+			<td><a href="http://example.org/?test&sube=1"><samp>&sube</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+2287</code></th>
+			<td><samp>&#x2287;</samp></td>
+			<td><samp>&#x2287</samp></td>
+			<th scope="row"><code>#8839</code></th>
+			<td><samp>&#8839;</samp></td>
+			<td><samp>&#8839</samp></td>
+			<th scope="row"><code>supe</code></th>
+			<td><a href="http://example.org/?test&supe;=0"><samp>&supe;</samp></a></td>
+			<td><a href="http://example.org/?test&supe=1"><samp>&supe</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+2295</code></th>
+			<td><samp>&#x2295;</samp></td>
+			<td><samp>&#x2295</samp></td>
+			<th scope="row"><code>#8853</code></th>
+			<td><samp>&#8853;</samp></td>
+			<td><samp>&#8853</samp></td>
+			<th scope="row"><code>oplus</code></th>
+			<td><a href="http://example.org/?test&oplus;=0"><samp>&oplus;</samp></a></td>
+			<td><a href="http://example.org/?test&oplus=1"><samp>&oplus</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+2297</code></th>
+			<td><samp>&#x2297;</samp></td>
+			<td><samp>&#x2297</samp></td>
+			<th scope="row"><code>#8855</code></th>
+			<td><samp>&#8855;</samp></td>
+			<td><samp>&#8855</samp></td>
+			<th scope="row"><code>otimes</code></th>
+			<td><a href="http://example.org/?test&otimes;=0"><samp>&otimes;</samp></a></td>
+			<td><a href="http://example.org/?test&otimes=1"><samp>&otimes</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+22A5</code></th>
+			<td><samp>&#x22A5;</samp></td>
+			<td><samp>&#x22A5</samp></td>
+			<th scope="row"><code>#8869</code></th>
+			<td><samp>&#8869;</samp></td>
+			<td><samp>&#8869</samp></td>
+			<th scope="row"><code>perp</code></th>
+			<td><a href="http://example.org/?test&perp;=0"><samp>&perp;</samp></a></td>
+			<td><a href="http://example.org/?test&perp=1"><samp>&perp</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+22C5</code></th>
+			<td><samp>&#x22C5;</samp></td>
+			<td><samp>&#x22C5</samp></td>
+			<th scope="row"><code>#8901</code></th>
+			<td><samp>&#8901;</samp></td>
+			<td><samp>&#8901</samp></td>
+			<th scope="row"><code>sdot</code></th>
+			<td><a href="http://example.org/?test&sdot;=0"><samp>&sdot;</samp></a></td>
+			<td><a href="http://example.org/?test&sdot=1"><samp>&sdot</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+2308</code></th>
+			<td><samp>&#x2308;</samp></td>
+			<td><samp>&#x2308</samp></td>
+			<th scope="row"><code>#8968</code></th>
+			<td><samp>&#8968;</samp></td>
+			<td><samp>&#8968</samp></td>
+			<th scope="row"><code>lceil</code></th>
+			<td><a href="http://example.org/?test&lceil;=0"><samp>&lceil;</samp></a></td>
+			<td><a href="http://example.org/?test&lceil=1"><samp>&lceil</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+2309</code></th>
+			<td><samp>&#x2309;</samp></td>
+			<td><samp>&#x2309</samp></td>
+			<th scope="row"><code>#8969</code></th>
+			<td><samp>&#8969;</samp></td>
+			<td><samp>&#8969</samp></td>
+			<th scope="row"><code>rceil</code></th>
+			<td><a href="http://example.org/?test&rceil;=0"><samp>&rceil;</samp></a></td>
+			<td><a href="http://example.org/?test&rceil=1"><samp>&rceil</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+230A</code></th>
+			<td><samp>&#x230A;</samp></td>
+			<td><samp>&#x230A</samp></td>
+			<th scope="row"><code>#8970</code></th>
+			<td><samp>&#8970;</samp></td>
+			<td><samp>&#8970</samp></td>
+			<th scope="row"><code>lfloor</code></th>
+			<td><a href="http://example.org/?test&lfloor;=0"><samp>&lfloor;</samp></a></td>
+			<td><a href="http://example.org/?test&lfloor=1"><samp>&lfloor</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+230B</code></th>
+			<td><samp>&#x230B;</samp></td>
+			<td><samp>&#x230B</samp></td>
+			<th scope="row"><code>#8971</code></th>
+			<td><samp>&#8971;</samp></td>
+			<td><samp>&#8971</samp></td>
+			<th scope="row"><code>rfloor</code></th>
+			<td><a href="http://example.org/?test&rfloor;=0"><samp>&rfloor;</samp></a></td>
+			<td><a href="http://example.org/?test&rfloor=1"><samp>&rfloor</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+2329</code></th>
+			<td><samp>&#x2329;</samp></td>
+			<td><samp>&#x2329</samp></td>
+			<th scope="row"><code>#9001</code></th>
+			<td><samp>&#9001;</samp></td>
+			<td><samp>&#9001</samp></td>
+			<th scope="row"><code>lang</code></th>
+			<td><a href="http://example.org/?test&lang;=0"><samp>&lang;</samp></a></td>
+			<td><a href="http://example.org/?test&lang=1"><samp>&lang</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+232A</code></th>
+			<td><samp>&#x232A;</samp></td>
+			<td><samp>&#x232A</samp></td>
+			<th scope="row"><code>#9002</code></th>
+			<td><samp>&#9002;</samp></td>
+			<td><samp>&#9002</samp></td>
+			<th scope="row"><code>rang</code></th>
+			<td><a href="http://example.org/?test&rang;=0"><samp>&rang;</samp></a></td>
+			<td><a href="http://example.org/?test&rang=1"><samp>&rang</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+25CA</code></th>
+			<td><samp>&#x25CA;</samp></td>
+			<td><samp>&#x25CA</samp></td>
+			<th scope="row"><code>#9674</code></th>
+			<td><samp>&#9674;</samp></td>
+			<td><samp>&#9674</samp></td>
+			<th scope="row"><code>loz</code></th>
+			<td><a href="http://example.org/?test&loz;=0"><samp>&loz;</samp></a></td>
+			<td><a href="http://example.org/?test&loz=1"><samp>&loz</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+2660</code></th>
+			<td><samp>&#x2660;</samp></td>
+			<td><samp>&#x2660</samp></td>
+			<th scope="row"><code>#9824</code></th>
+			<td><samp>&#9824;</samp></td>
+			<td><samp>&#9824</samp></td>
+			<th scope="row"><code>spades</code></th>
+			<td><a href="http://example.org/?test&spades;=0"><samp>&spades;</samp></a></td>
+			<td><a href="http://example.org/?test&spades=1"><samp>&spades</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+2663</code></th>
+			<td><samp>&#x2663;</samp></td>
+			<td><samp>&#x2663</samp></td>
+			<th scope="row"><code>#9827</code></th>
+			<td><samp>&#9827;</samp></td>
+			<td><samp>&#9827</samp></td>
+			<th scope="row"><code>clubs</code></th>
+			<td><a href="http://example.org/?test&clubs;=0"><samp>&clubs;</samp></a></td>
+			<td><a href="http://example.org/?test&clubs=1"><samp>&clubs</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+2665</code></th>
+			<td><samp>&#x2665;</samp></td>
+			<td><samp>&#x2665</samp></td>
+			<th scope="row"><code>#9829</code></th>
+			<td><samp>&#9829;</samp></td>
+			<td><samp>&#9829</samp></td>
+			<th scope="row"><code>hearts</code></th>
+			<td><a href="http://example.org/?test&hearts;=0"><samp>&hearts;</samp></a></td>
+			<td><a href="http://example.org/?test&hearts=1"><samp>&hearts</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+2666</code></th>
+			<td><samp>&#x2666;</samp></td>
+			<td><samp>&#x2666</samp></td>
+			<th scope="row"><code>#9830</code></th>
+			<td><samp>&#9830;</samp></td>
+			<td><samp>&#9830</samp></td>
+			<th scope="row"><code>diams</code></th>
+			<td><a href="http://example.org/?test&diams;=0"><samp>&diams;</samp></a></td>
+			<td><a href="http://example.org/?test&diams=1"><samp>&diams</samp></a></td>
+		</tr>
+	</tbody>
+</table>
+
+<h2 id="misc">Markup-Significant and Internationalization Characters</h2>
+<table>
+	<colgroup class="hex" title="Hexadecimal Character Reference">
+		<col class="codepoint">
+		<col class="withrefc">
+		<col class="withoutrefc">
+	</colgroup>
+	<colgroup class="numeric" title="Numeric Character Reference">
+		<col class="codepoint">
+		<col class="withrefc">
+		<col class="withoutrefc">
+	</colgroup>
+	<colgroup class="entity" title="Entity References">
+		<col class="codepoint">
+		<col class="withrefc">
+		<col class="withoutrefc">
+	</colgroup>
+	<thead>
+		<tr>
+			<th colspan="3">Hex</th>
+			<th colspan="3">Numeric</th>
+			<th colspan="3">Entity Reference </th>
+		</tr>
+		<tr>
+			<th>Code Point</th>
+			<th>with <code>REFC</code></th>
+			<th>without <code>REFC</code></th>
+			<th>Code Point</th>
+			<th>with <code>REFC</code></th>
+			<th>without <code>REFC</code></th>
+			<th>Entity Name</th>
+			<th>with <code>REFC</code></th>
+			<th>without <code>REFC</code></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th scope="row"><code>U+0027</code></th>
+			<td><samp>&#x0027;</samp></td>
+			<td><samp>&#x0027</samp></td>
+			<th scope="row"><code>#39</code></th>
+			<td><samp>&#39;</samp></td>
+			<td><samp>&#39</samp></td>
+			<th scope="row"><code>apos</code></th>
+			<td><a href="http://example.org/?test&apos;=0"><samp>&apos;</samp></a></td>
+			<td><a href="http://example.org/?test&apos=1"><samp>&apos</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+0022</code></th>
+			<td><samp>&#x0022;</samp></td>
+			<td><samp>&#x0022</samp></td>
+			<th scope="row"><code>#34</code></th>
+			<td><samp>&#34;</samp></td>
+			<td><samp>&#34</samp></td>
+			<th scope="row"><code>quot</code></th>
+			<td><a href="http://example.org/?test&quot;=0"><samp>&quot;</samp></a></td>
+			<td><a href="http://example.org/?test&quot=1"><samp>&quot</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+0026</code></th>
+			<td><samp>&#x0026;</samp></td>
+			<td><samp>&#x0026</samp></td>
+			<th scope="row"><code>#38</code></th>
+			<td><samp>&#38;</samp></td>
+			<td><samp>&#38</samp></td>
+			<th scope="row"><code>amp</code></th>
+			<td><a href="http://example.org/?test&amp;=0"><samp>&amp;</samp></a></td>
+			<td><a href="http://example.org/?test&amp=1"><samp>&amp</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+003C</code></th>
+			<td><samp>&#x003C;</samp></td>
+			<td><samp>&#x003C</samp></td>
+			<th scope="row"><code>#60</code></th>
+			<td><samp>&#60;</samp></td>
+			<td><samp>&#60</samp></td>
+			<th scope="row"><code>lt</code></th>
+			<td><a href="http://example.org/?test&lt;=0"><samp>&lt;</samp></a></td>
+			<td><a href="http://example.org/?test&lt=1"><samp>&lt</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+003E</code></th>
+			<td><samp>&#x003E;</samp></td>
+			<td><samp>&#x003E</samp></td>
+			<th scope="row"><code>#62</code></th>
+			<td><samp>&#62;</samp></td>
+			<td><samp>&#62</samp></td>
+			<th scope="row"><code>gt</code></th>
+			<td><a href="http://example.org/?test&gt;=0"><samp>&gt;</samp></a></td>
+			<td><a href="http://example.org/?test&gt=1"><samp>&gt</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+0152</code></th>
+			<td><samp>&#x0152;</samp></td>
+			<td><samp>&#x0152</samp></td>
+			<th scope="row"><code>#338</code></th>
+			<td><samp>&#338;</samp></td>
+			<td><samp>&#338</samp></td>
+			<th scope="row"><code>OElig</code></th>
+			<td><a href="http://example.org/?test&OElig;=0"><samp>&OElig;</samp></a></td>
+			<td><a href="http://example.org/?test&OElig=1"><samp>&OElig</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+0153</code></th>
+			<td><samp>&#x0153;</samp></td>
+			<td><samp>&#x0153</samp></td>
+			<th scope="row"><code>#339</code></th>
+			<td><samp>&#339;</samp></td>
+			<td><samp>&#339</samp></td>
+			<th scope="row"><code>oelig</code></th>
+			<td><a href="http://example.org/?test&oelig;=0"><samp>&oelig;</samp></a></td>
+			<td><a href="http://example.org/?test&oelig=1"><samp>&oelig</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+0160</code></th>
+			<td><samp>&#x0160;</samp></td>
+			<td><samp>&#x0160</samp></td>
+			<th scope="row"><code>#352</code></th>
+			<td><samp>&#352;</samp></td>
+			<td><samp>&#352</samp></td>
+			<th scope="row"><code>Scaron</code></th>
+			<td><a href="http://example.org/?test&Scaron;=0"><samp>&Scaron;</samp></a></td>
+			<td><a href="http://example.org/?test&Scaron=1"><samp>&Scaron</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+0161</code></th>
+			<td><samp>&#x0161;</samp></td>
+			<td><samp>&#x0161</samp></td>
+			<th scope="row"><code>#353</code></th>
+			<td><samp>&#353;</samp></td>
+			<td><samp>&#353</samp></td>
+			<th scope="row"><code>scaron</code></th>
+			<td><a href="http://example.org/?test&scaron;=0"><samp>&scaron;</samp></a></td>
+			<td><a href="http://example.org/?test&scaron=1"><samp>&scaron</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+0178</code></th>
+			<td><samp>&#x0178;</samp></td>
+			<td><samp>&#x0178</samp></td>
+			<th scope="row"><code>#376</code></th>
+			<td><samp>&#376;</samp></td>
+			<td><samp>&#376</samp></td>
+			<th scope="row"><code>Yuml</code></th>
+			<td><a href="http://example.org/?test&Yuml;=0"><samp>&Yuml;</samp></a></td>
+			<td><a href="http://example.org/?test&Yuml=1"><samp>&Yuml</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+02C6</code></th>
+			<td><samp>&#x02C6;</samp></td>
+			<td><samp>&#x02C6</samp></td>
+			<th scope="row"><code>#710</code></th>
+			<td><samp>&#710;</samp></td>
+			<td><samp>&#710</samp></td>
+			<th scope="row"><code>circ</code></th>
+			<td><a href="http://example.org/?test&circ;=0"><samp>&circ;</samp></a></td>
+			<td><a href="http://example.org/?test&circ=1"><samp>&circ</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+02DC</code></th>
+			<td><samp>&#x02DC;</samp></td>
+			<td><samp>&#x02DC</samp></td>
+			<th scope="row"><code>#732</code></th>
+			<td><samp>&#732;</samp></td>
+			<td><samp>&#732</samp></td>
+			<th scope="row"><code>tilde</code></th>
+			<td><a href="http://example.org/?test&tilde;=0"><samp>&tilde;</samp></a></td>
+			<td><a href="http://example.org/?test&tilde=1"><samp>&tilde</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+2002</code></th>
+			<td><samp>&#x2002;</samp></td>
+			<td><samp>&#x2002</samp></td>
+			<th scope="row"><code>#8194</code></th>
+			<td><samp>&#8194;</samp></td>
+			<td><samp>&#8194</samp></td>
+			<th scope="row"><code>ensp</code></th>
+			<td><a href="http://example.org/?test&ensp;=0"><samp>&ensp;</samp></a></td>
+			<td><a href="http://example.org/?test&ensp=1"><samp>&ensp</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+2003</code></th>
+			<td><samp>&#x2003;</samp></td>
+			<td><samp>&#x2003</samp></td>
+			<th scope="row"><code>#8195</code></th>
+			<td><samp>&#8195;</samp></td>
+			<td><samp>&#8195</samp></td>
+			<th scope="row"><code>emsp</code></th>
+			<td><a href="http://example.org/?test&emsp;=0"><samp>&emsp;</samp></a></td>
+			<td><a href="http://example.org/?test&emsp=1"><samp>&emsp</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+2009</code></th>
+			<td><samp>&#x2009;</samp></td>
+			<td><samp>&#x2009</samp></td>
+			<th scope="row"><code>#8201</code></th>
+			<td><samp>&#8201;</samp></td>
+			<td><samp>&#8201</samp></td>
+			<th scope="row"><code>thinsp</code></th>
+			<td><a href="http://example.org/?test&thinsp;=0"><samp>&thinsp;</samp></a></td>
+			<td><a href="http://example.org/?test&thinsp=1"><samp>&thinsp</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+200C</code></th>
+			<td><samp>&#x200C;</samp></td>
+			<td><samp>&#x200C</samp></td>
+			<th scope="row"><code>#8204</code></th>
+			<td><samp>&#8204;</samp></td>
+			<td><samp>&#8204</samp></td>
+			<th scope="row"><code>zwnj</code></th>
+			<td><a href="http://example.org/?test&zwnj;=0"><samp>&zwnj;</samp></a></td>
+			<td><a href="http://example.org/?test&zwnj=1"><samp>&zwnj</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+200D</code></th>
+			<td><samp>&#x200D;</samp></td>
+			<td><samp>&#x200D</samp></td>
+			<th scope="row"><code>#8205</code></th>
+			<td><samp>&#8205;</samp></td>
+			<td><samp>&#8205</samp></td>
+			<th scope="row"><code>zwj</code></th>
+			<td><a href="http://example.org/?test&zwj;=0"><samp>&zwj;</samp></a></td>
+			<td><a href="http://example.org/?test&zwj=1"><samp>&zwj</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+200E</code></th>
+			<td><samp>&#x200E;</samp></td>
+			<td><samp>&#x200E</samp></td>
+			<th scope="row"><code>#8206</code></th>
+			<td><samp>&#8206;</samp></td>
+			<td><samp>&#8206</samp></td>
+			<th scope="row"><code>lrm</code></th>
+			<td><a href="http://example.org/?test&lrm;=0"><samp>&lrm;</samp></a></td>
+			<td><a href="http://example.org/?test&lrm=1"><samp>&lrm</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+200F</code></th>
+			<td><samp>&#x200F;</samp></td>
+			<td><samp>&#x200F</samp></td>
+			<th scope="row"><code>#8207</code></th>
+			<td><samp>&#8207;</samp></td>
+			<td><samp>&#8207</samp></td>
+			<th scope="row"><code>rlm</code></th>
+			<td><a href="http://example.org/?test&rlm;=0"><samp>&rlm;</samp></a></td>
+			<td><a href="http://example.org/?test&rlm=1"><samp>&rlm</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+2013</code></th>
+			<td><samp>&#x2013;</samp></td>
+			<td><samp>&#x2013</samp></td>
+			<th scope="row"><code>#8211</code></th>
+			<td><samp>&#8211;</samp></td>
+			<td><samp>&#8211</samp></td>
+			<th scope="row"><code>ndash</code></th>
+			<td><a href="http://example.org/?test&ndash;=0"><samp>&ndash;</samp></a></td>
+			<td><a href="http://example.org/?test&ndash=1"><samp>&ndash</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+2014</code></th>
+			<td><samp>&#x2014;</samp></td>
+			<td><samp>&#x2014</samp></td>
+			<th scope="row"><code>#8212</code></th>
+			<td><samp>&#8212;</samp></td>
+			<td><samp>&#8212</samp></td>
+			<th scope="row"><code>mdash</code></th>
+			<td><a href="http://example.org/?test&mdash;=0"><samp>&mdash;</samp></a></td>
+			<td><a href="http://example.org/?test&mdash=1"><samp>&mdash</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+2018</code></th>
+			<td><samp>&#x2018;</samp></td>
+			<td><samp>&#x2018</samp></td>
+			<th scope="row"><code>#8216</code></th>
+			<td><samp>&#8216;</samp></td>
+			<td><samp>&#8216</samp></td>
+			<th scope="row"><code>lsquo</code></th>
+			<td><a href="http://example.org/?test&lsquo;=0"><samp>&lsquo;</samp></a></td>
+			<td><a href="http://example.org/?test&lsquo=1"><samp>&lsquo</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+2019</code></th>
+			<td><samp>&#x2019;</samp></td>
+			<td><samp>&#x2019</samp></td>
+			<th scope="row"><code>#8217</code></th>
+			<td><samp>&#8217;</samp></td>
+			<td><samp>&#8217</samp></td>
+			<th scope="row"><code>rsquo</code></th>
+			<td><a href="http://example.org/?test&rsquo;=0"><samp>&rsquo;</samp></a></td>
+			<td><a href="http://example.org/?test&rsquo=1"><samp>&rsquo</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+201A</code></th>
+			<td><samp>&#x201A;</samp></td>
+			<td><samp>&#x201A</samp></td>
+			<th scope="row"><code>#8218</code></th>
+			<td><samp>&#8218;</samp></td>
+			<td><samp>&#8218</samp></td>
+			<th scope="row"><code>sbquo</code></th>
+			<td><a href="http://example.org/?test&sbquo;=0"><samp>&sbquo;</samp></a></td>
+			<td><a href="http://example.org/?test&sbquo=1"><samp>&sbquo</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+201C</code></th>
+			<td><samp>&#x201C;</samp></td>
+			<td><samp>&#x201C</samp></td>
+			<th scope="row"><code>#8220</code></th>
+			<td><samp>&#8220;</samp></td>
+			<td><samp>&#8220</samp></td>
+			<th scope="row"><code>ldquo</code></th>
+			<td><a href="http://example.org/?test&ldquo;=0"><samp>&ldquo;</samp></a></td>
+			<td><a href="http://example.org/?test&ldquo=1"><samp>&ldquo</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+201D</code></th>
+			<td><samp>&#x201D;</samp></td>
+			<td><samp>&#x201D</samp></td>
+			<th scope="row"><code>#8221</code></th>
+			<td><samp>&#8221;</samp></td>
+			<td><samp>&#8221</samp></td>
+			<th scope="row"><code>rdquo</code></th>
+			<td><a href="http://example.org/?test&rdquo;=0"><samp>&rdquo;</samp></a></td>
+			<td><a href="http://example.org/?test&rdquo=1"><samp>&rdquo</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+201E</code></th>
+			<td><samp>&#x201E;</samp></td>
+			<td><samp>&#x201E</samp></td>
+			<th scope="row"><code>#8222</code></th>
+			<td><samp>&#8222;</samp></td>
+			<td><samp>&#8222</samp></td>
+			<th scope="row"><code>bdquo</code></th>
+			<td><a href="http://example.org/?test&bdquo;=0"><samp>&bdquo;</samp></a></td>
+			<td><a href="http://example.org/?test&bdquo=1"><samp>&bdquo</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+2020</code></th>
+			<td><samp>&#x2020;</samp></td>
+			<td><samp>&#x2020</samp></td>
+			<th scope="row"><code>#8224</code></th>
+			<td><samp>&#8224;</samp></td>
+			<td><samp>&#8224</samp></td>
+			<th scope="row"><code>dagger</code></th>
+			<td><a href="http://example.org/?test&dagger;=0"><samp>&dagger;</samp></a></td>
+			<td><a href="http://example.org/?test&dagger=1"><samp>&dagger</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+2021</code></th>
+			<td><samp>&#x2021;</samp></td>
+			<td><samp>&#x2021</samp></td>
+			<th scope="row"><code>#8225</code></th>
+			<td><samp>&#8225;</samp></td>
+			<td><samp>&#8225</samp></td>
+			<th scope="row"><code>Dagger</code></th>
+			<td><a href="http://example.org/?test&Dagger;=0"><samp>&Dagger;</samp></a></td>
+			<td><a href="http://example.org/?test&Dagger=1"><samp>&Dagger</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+2030</code></th>
+			<td><samp>&#x2030;</samp></td>
+			<td><samp>&#x2030</samp></td>
+			<th scope="row"><code>#8240</code></th>
+			<td><samp>&#8240;</samp></td>
+			<td><samp>&#8240</samp></td>
+			<th scope="row"><code>permil</code></th>
+			<td><a href="http://example.org/?test&permil;=0"><samp>&permil;</samp></a></td>
+			<td><a href="http://example.org/?test&permil=1"><samp>&permil</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+2039</code></th>
+			<td><samp>&#x2039;</samp></td>
+			<td><samp>&#x2039</samp></td>
+			<th scope="row"><code>#8249</code></th>
+			<td><samp>&#8249;</samp></td>
+			<td><samp>&#8249</samp></td>
+			<th scope="row"><code>lsaquo</code></th>
+			<td><a href="http://example.org/?test&lsaquo;=0"><samp>&lsaquo;</samp></a></td>
+			<td><a href="http://example.org/?test&lsaquo=1"><samp>&lsaquo</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+203A</code></th>
+			<td><samp>&#x203A;</samp></td>
+			<td><samp>&#x203A</samp></td>
+			<th scope="row"><code>#8250</code></th>
+			<td><samp>&#8250;</samp></td>
+			<td><samp>&#8250</samp></td>
+			<th scope="row"><code>rsaquo</code></th>
+			<td><a href="http://example.org/?test&rsaquo;=0"><samp>&rsaquo;</samp></a></td>
+			<td><a href="http://example.org/?test&rsaquo=1"><samp>&rsaquo</samp></a></td>
+		</tr>
+		<tr>
+			<th scope="row"><code>U+20AC</code></th>
+			<td><samp>&#x20AC;</samp></td>
+			<td><samp>&#x20AC</samp></td>
+			<th scope="row"><code>#8364</code></th>
+			<td><samp>&#8364;</samp></td>
+			<td><samp>&#8364</samp></td>
+			<th scope="row"><code>euro</code></th>
+			<td><a href="http://example.org/?test&euro;=0"><samp>&euro;</samp></a></td>
+			<td><a href="http://example.org/?test&euro=1"><samp>&euro</samp></a></td>
+		</tr>
+	</tbody>
+</table>
+
+</body>
+</html>

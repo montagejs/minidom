@@ -1,0 +1,19 @@
+<!DOCYTPE html>
+<html>
+ <head>
+  <title>006 - autofocus DOM attribute return value</title>
+  <link rel="help" href="http://www.whatwg.org/specs/web-forms/current-work/#the-autofocus" title="The autofocus attribute">
+ </head>
+ <body>
+  <p>It should say PASS in the text box below.</p>
+  <p><input type="text" name="test" autofocus id="test1" value="FAIL (script did not execute)"></p>
+  <script>
+    var test = document.getElementById("test1");
+	if (test.autofocus === true) {
+	  test.value = "PASS";
+	} else {
+	  test.value = "FAIL";
+	}
+  </script>
+ </body>
+</html

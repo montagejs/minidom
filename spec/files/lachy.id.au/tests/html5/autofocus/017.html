@@ -1,0 +1,19 @@
+<!DOCYTPE html>
+<html>
+ <head>
+  <title>017 - autofocus generated content with innerHTML</title>
+  <link rel="help" href="http://www.whatwg.org/specs/web-forms/current-work/#the-autofocus" title="The autofocus attribute">
+  <style>
+  input { background: red; }
+  input:focus { background: green; }
+  </style>
+ </head>
+ <body>
+  <p>The following text box should have focus and should be green.</p>
+  <div id="test"></div>
+  <script>
+    var test = document.getElementById("test");
+	test.innerHTML = "<input type=text autofocus>"
+  </script>
+ </body>
+</html

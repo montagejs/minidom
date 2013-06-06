@@ -1,0 +1,20 @@
+<!DOCYTPE html>
+<html>
+ <head>
+  <title>011 - autofocus DOM attribute adds content attribute when set to true</title>
+  <link rel="help" href="http://www.whatwg.org/specs/web-forms/current-work/#the-autofocus" title="The autofocus attribute">
+ </head>
+ <body>
+  <p>It should say PASS in the text box below.</p>
+  <p><input type="text" name="test" id="test1" value="FAIL (script did not execute)"></p>
+  <script>
+    var test = document.getElementById("test1");
+	test.autofocus = true;
+	if (test.getAttribute("autofocus") == "autofocus") {
+	  test.value = "PASS";
+	} else {
+	  test.value = "FAIL";
+	}
+  </script>
+ </body>
+</html
