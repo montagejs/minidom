@@ -7,11 +7,11 @@ describe("minidom", function () {
 
     describe("constructor", function () {
 
-        it("returns a document", function () {
+        it("returns an empty document when given no arguments", function () {
             var doc = minidom();
             expect(doc.nodeType).toEqual(doc.DOCUMENT_NODE);
+            expect(doc.documentElement.outerHTML).toEqual("<html><head></head><body></body></html>");
         });
-
     });
 
     describe("textContent", function () {
