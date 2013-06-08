@@ -16,11 +16,15 @@ describe("html files", function () {
     for (var i = 0; i < list.length; i++) {
         var file = list[i];
         var name = file.replace(__dirname, "");
-        it(name, function () {
-            minidom(FS.readFileSync(file));
-        });
+        makeIt(name, file);
     }
 });
+
+function makeIt(name, file) {
+    it(name, function () {
+        minidom(FS.readFileSync(file));
+    });
+}
 
 // Inspired by http://stackoverflow.com/a/5827895/100172
 // sure, there are plenty of packages which include this kind of functionality,
