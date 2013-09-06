@@ -14,7 +14,7 @@
   "author": "Stuart Knightley <stuart@stuartk.com>",
   "license": "MIT",
   "dependencies": {
-    "htmlparser2": "~3.0.5"
+    "parse5": "~0.6.0"
   },
   "devDependencies": {
     "jasmine-node": "~1.7.1",

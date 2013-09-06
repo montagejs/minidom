@@ -1,4 +1,4 @@
-var htmlparser = require("htmlparser2");
+var parse5 = require("parse5");
 var dom = require("./lib/dom-level1").dom.level1.core;
 // add textContent
 require("./lib/dom-level3");
@@ -19,9 +19,12 @@ var exports = module.exports = function minidom(html) {
     document.doctype = new dom.DocumentType(document, "html");
 
     var handler = new Handler(document);
-    var parser = new htmlparser.Parser(handler);
+    var Parser = parse5.Parser;
 
-    parser.parseComplete(html);
+    //Instantiate parser
+    var parser = new Parser(handler);
+
+    parser.parse(html);
 
     return document;
 };
@@ -29,14 +32,23 @@ var exports = module.exports = function minidom(html) {
 exports.dom = dom;
 
 function Handler(document) {
-    this.document = document;
-    this._currentElement = document;
+    this.document = null;
     this._reset = false;
 }
 
 Handler.prototype = {
 
-    onopentag: function (tagName, attributes) {
+    createDocument: function () {
+        var document = this.document = new dom.Document(DOCUMENT_OPTIONS);
+        return document;
+    },
+
+    createDocumentFragment: function () {
+        throw new Error("Not implemented");
+    },
+
+    createElement: function (tagName, namespaceURI, attributes) {
+        // TODO namespaceURI document.createElementNS (level 2)
         var el = this.document.createElement(tagName);
 
         for (var name in attributes) {
@@ -45,17 +57,38 @@ Handler.prototype = {
             }
         }
 
-        this._currentElement.appendChild(el);
-        this._currentElement = el;
+        return el;
     },
 
-    onclosetag: function (tagName) {
-        this._currentElement = this._currentElement.parentNode;
+    createTextNode: function (text) {
+        return this.document.createTextNode(text);
     },
 
-    ontext: function (text) {
-        var node = this.document.createTextNode(text);
-        this._currentElement.appendChild(node);
+    setDocumentType: function () {
+        throw new Error("Not implemented");
+    },
+
+    setQuirksMode: function (document) {
+        throw new Error("Not implemented");
+        document.quirksMode = true;
+    },
+
+    isQuirksMode: function (document) {
+        throw new Error("Not implemented");
+        return document.quirksMode;
+    },
+
+    appendChild: function (parent, node) {
+        parent.appendChild(node);
+    },
+
+    insertBefore: function (parent, node, reference) {
+        parent.insertBefore(node, reference);
+    },
+
+    detachNode: function (node) {
+        // TODO if
+        node.parentElement.removeChild(node);
     },
 
     onprocessinginstruction: function (target, data) {
@@ -73,9 +106,8 @@ Handler.prototype = {
         }
     },
 
-    oncomment: function (data) {
-        var comment = this.document.createComment(data);
-        this._currentElement.appendChild(comment);
+    createCommentNode: function (data) {
+        return this.document.createComment(data);
     },
 
     oncdatastart: function (data) {
