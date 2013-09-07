@@ -11,14 +11,10 @@ var DOCUMENT_OPTIONS = {
 
 var exports = module.exports = function minidom(html) {
     if (!html) {
-        html = "<html><head></head><body></body></html>";
+        html = "<!doctype html><html><head></head><body></body></html>";
     }
 
-    var document = new dom.Document(DOCUMENT_OPTIONS);
-    // We only work with the HTML doctype
-    document.doctype = new dom.DocumentType(document, "html");
-
-    var handler = new Handler(document);
+    var handler = new Handler();
     var Parser = parse5.Parser;
 
     //Instantiate parser
@@ -26,13 +22,14 @@ var exports = module.exports = function minidom(html) {
 
     parser.parse(html);
 
-    return document;
+    return handler.document;
 };
 
 exports.dom = dom;
 
-function Handler(document) {
+function Handler() {
     this.document = null;
+    this._quirksMode = false;
     this._reset = false;
 }
 
@@ -48,8 +45,14 @@ Handler.prototype = {
     },
 
     createElement: function (tagName, namespaceURI, attributes) {
-        // TODO namespaceURI document.createElementNS (level 2)
         var el = this.document.createElement(tagName);
+
+        Object.defineProperty(el, "namespaceURI", {
+            configurable: true,
+            enumerable: true,
+            writable: false,
+            value: namespaceURI
+        });
 
         for (var name in attributes) {
             if (attributes.hasOwnProperty(name)) {
@@ -64,18 +67,38 @@ Handler.prototype = {
         return this.document.createTextNode(text);
     },
 
-    setDocumentType: function () {
-        throw new Error("Not implemented");
+    setDocumentType: function (document, name, publicId, systemId) {
+        var doctype = this.document.doctype;
+        if (!doctype) {
+            doctype = new dom.DocumentType(document);
+            document.doctype = doctype;
+            this.document.appendChild(doctype);
+        }
+
+        doctype._name = name;
+        Object.defineProperties(doctype, {
+            publicId: {
+                configurable: true,
+                enumerable: true,
+                writable: false,
+                value: publicId
+            },
+            systemId: {
+                configurable: true,
+                enumerable: true,
+                writable: false,
+                value: systemId
+            }
+        });
+
     },
 
     setQuirksMode: function (document) {
-        throw new Error("Not implemented");
-        document.quirksMode = true;
+        this._quirksMode = true;
     },
 
     isQuirksMode: function (document) {
-        throw new Error("Not implemented");
-        return document.quirksMode;
+        return this._quirksMode;
     },
 
     appendChild: function (parent, node) {
@@ -87,42 +110,42 @@ Handler.prototype = {
     },
 
     detachNode: function (node) {
-        // TODO if
+        // TODO if !parentElement
         node.parentElement.removeChild(node);
     },
 
-    onprocessinginstruction: function (target, data) {
-        if (target.toLowerCase() === "!doctype") {
-            if (!/!doctype html/i.test(data)) {
-                throw new Error("minidom only supports HTML documents, not '" + data + "'");
-            }
-            // We only work in HTML mode, and so no need to actually parse
-            // the doctype. Instead just give the user a way to get the
-            // original doctype back.
-            this.document.doctype.toString = function () { return "<" + data + ">"; };
-        } else {
-            var node = this.document.createProcessingInstruction(target, data);
-            this._currentElement.appendChild(node);
-        }
+    insertText: function (parent, text) {
+        // todo append to prevous text node
+        parent.appendChild(this.document.createTextNode(text));
     },
 
-    createCommentNode: function (data) {
-        return this.document.createComment(data);
+    insertTextBefore: function (parent, text, reference) {
+        // todo append to prevous text node
+        parent.insertBefore(this.document.createTextNode(text), reference);
     },
 
-    oncdatastart: function (data) {
-        var cdata = this.document.createCDATASection(data);
-        this._currentElement.appendChild(cdata);
+    adoptAttributes: function (node, attributes) {
+        throw new Error("Not implemented");
     },
 
-    onerror: function (error) {
-        throw error;
+    getFirstChild: function (node) {
+        return node.firstChild;
     },
 
-    onreset: function () {
-        if (this._reset) {
-            throw new Error("Cannot reset handler a second time");
-        }
-        this._reset = true;
+    getParentNode: function (node) {
+        return node.parentNode;
+    },
+
+    getAttrList: function (node) {
+        // todo array-ize?
+        return node.attributes;
+    },
+
+    getTagName: function (element) {
+        return element.tagName;
+    },
+
+    getNamespaceURI: function (element) {
+        return element.namespaceURI;
     }
 };
