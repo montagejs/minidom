@@ -63,6 +63,10 @@ Handler.prototype = {
         return el;
     },
 
+    createCommentNode: function (data) {
+        return this.document.createComment(data);
+    },
+
     createTextNode: function (text) {
         return this.document.createTextNode(text);
     },
@@ -125,7 +129,12 @@ Handler.prototype = {
     },
 
     adoptAttributes: function (node, attributes) {
-        throw new Error("Not implemented");
+        for (var i = 0, len = attributes.length; i < len; i++) {
+            var attr = attributes[i];
+            if (node.getAttribute(attr.name) !== null) {
+                node.setAttribute(attr.name, attr.value);
+            }
+        }
     },
 
     getFirstChild: function (node) {
