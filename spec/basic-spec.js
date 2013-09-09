@@ -2,7 +2,6 @@
 /*global describe, it, expect */
 
 var minidom = require("../minidom");
-
 describe("minidom", function () {
 
     describe("constructor", function () {
@@ -17,7 +16,7 @@ describe("minidom", function () {
     describe("textContent", function () {
 
         it("returns the text", function () {
-            var doc = minidom("<html><head>pass</head><body>pass</body></html>");
+            var doc = minidom("<html><head><title>pass</title></head><body>pass</body></html>");
             expect(doc.children[0].textContent).toEqual("passpass");
         });
 
@@ -43,8 +42,8 @@ describe("minidom", function () {
                 expect(doc.doctype.toString()).toEqual(doctype);
 
                 expect(doc.children[0].tagName).toEqual("HTML");
-                expect(doc.children[0].children[0].tagName).toEqual("BODY");
-                expect(doc.children[0].children[0].textContent).toEqual("pass");
+                expect(doc.children[0].children[1].tagName).toEqual("BODY");
+                expect(doc.children[0].children[1].textContent).toEqual("pass");
             });
 
             it("rejects non-HTML doctypes", function () {
@@ -77,23 +76,14 @@ describe("minidom", function () {
         describe("comments", function () {
             it("works", function () {
                 var doc = minidom(
-                    '<p>hello<!-- pass --></p>'
+                    '<html><head></head><body><!-- pass -->'
                 );
 
-                var comment = doc.children[0].childNodes[1];
+                var comment = doc.children[0].children[1].childNodes[0];
                 expect(comment.nodeType).toEqual(comment.COMMENT_NODE);
                 expect(comment.nodeValue).toEqual(" pass ");
             });
         });
-
-        describe("CDATA", function () {
-            it("is not supported", function () {
-                expect(function () {
-                    minidom('<math><![CDATA[x<y]]></math>');
-                }).toThrow();
-            });
-        });
-
     });
 
 });
