@@ -9,10 +9,27 @@ and `innerHTML` and `outerHTML` getters. Only supports HTML documents.
 ```javascript
 var minidom = require("minidom");
 
-var document = minidom('<html><head><title>Hello</title><body><h1>Hi!</h1></body></html>');
+var document = minidom('<!doctype><html><head><title>Hello</title><body><h1>Hi!</h1></body></html>');
 
 document.getElementsByTagName("h1")[0].textContent === "Hi!"; // true
 ```
+
+## Differences with JSDom
+
+|  | JSDom | minidom |
+| --- | --- | --- |
+| Runs Javascript in the page context | Yes | No |
+| CSSOM | Yes | No |
+| Loads remote resources | Yes | No |
+| HTML5 parsing algorithm | No | Yes* |
+| Runs in the browser | No | Soon** |
+| Awesome | Yes | Yes |
+
+Basically minidom does a lot less, but often it's all you need.
+
+* This means that the DOM representation is the same as you would get in the browser, but may not be suitable if you wish to preserve as much of the original formatting as possible. For example parsing `<body>hi</body><head><title>hello</title>` with minidom results in a document that looks like `<html><head></head><body>hi<title>hello</title></body></html> `, where as JSDom outputs `<html><body>hi</body><head><title>hello</title></head></html>`.
+
+** This is probably very cool, although I have no idea why.
 
 ## Supported API
 
@@ -101,7 +118,7 @@ Properties marked &#x20E0;&nbsp; are read-only
 
 ## Thanks
 
-Made possible with large excerpts from [JSDom](https://github.com/tmpvar/jsdom).
+Made possible with large excerpts from [JSDom](https://github.com/tmpvar/jsdom), and the excellent [parse5](https://github.com/inikulin/parse5) implementation of the HTML5 parsing algorithm.
 
 ## License
 
