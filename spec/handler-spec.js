@@ -120,6 +120,22 @@ describe("Handler", function () {
         });
     });
 
+    describe("insertBefore", function () {
+        it("adds a child to the parent", function () {
+            var parent = handler.createElement("div");
+            var reference = handler.createElement("div");
+            var el = handler.createElement("div");
+
+            handler.appendChild(parent, reference);
+
+            handler.insertBefore(parent, el, reference);
+
+            expect(parent.childNodes.length).toEqual(2);
+            expect(parent.childNodes[0]).toBe(el);
+            expect(el.parentNode).toBe(parent);
+        });
+    });
+
     describe("detachNode", function () {
         it("removes the child node", function () {
             var parent = handler.createElement("div");
