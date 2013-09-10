@@ -151,7 +151,7 @@ Handler.prototype = {
     },
 
     getTagName: function (element) {
-        return element.tagName;
+        return element.tagName.toLowerCase();
     },
 
     getNamespaceURI: function (element) {
