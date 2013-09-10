@@ -1,4 +1,4 @@
-var parse5 = require("parse5");
+var Parser = require("parse5").Parser;
 var Handler = require("./handler");
 
 module.exports = function minidom(html) {
@@ -7,9 +7,6 @@ module.exports = function minidom(html) {
     }
 
     var handler = new Handler();
-    var Parser = parse5.Parser;
-
-    //Instantiate parser
     var parser = new Parser(handler);
 
     parser.parse(html);
