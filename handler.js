@@ -152,8 +152,12 @@ Handler.prototype = {
     },
 
     getAttrList: function (node) {
-        // todo array-ize?
-        return node.attributes;
+        var list = [];
+        var attrs = node.attributes;
+        for (var i = 0, len = attrs.length; i < len; i++) {
+            list.push({name: attrs[i].name, value: attrs[i].value});
+        }
+        return list;
     },
 
     getTagName: function (element) {

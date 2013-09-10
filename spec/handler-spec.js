@@ -229,7 +229,10 @@ describe("Handler", function () {
     });
 
     describe("getAttrList", function () {
-
+        it("returns a list of {name, value} attributes", function () {
+            var el = handler.createElement("div", void 0, [{name: "pass1", value: "pass2"}]);
+            expect(handler.getAttrList(el)).toEqual([{name: "pass1", value: "pass2"}]);
+        });
     });
 
     describe("getTagName", function () {
