@@ -21,7 +21,7 @@ Handler.prototype = {
     },
 
     createDocumentFragment: function () {
-        throw new Error("Not implemented");
+        return this.document.createDocumentFragment();
     },
 
     createElement: function (tagName, namespaceURI, attributes) {

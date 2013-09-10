@@ -22,6 +22,12 @@ describe("Handler", function () {
         });
     });
 
+    describe("createDocumentFragment", function () {
+        it("returns a document fragment", function () {
+            expect(handler.createDocumentFragment().nodeType).toEqual(dom.Document.prototype.DOCUMENT_FRAGMENT_NODE);
+        });
+    });
+
     describe("createElement", function () {
         it("creates an element of the correct tagName", function () {
             expect(handler.createElement("div").tagName).toEqual("DIV");
