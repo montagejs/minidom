@@ -21,7 +21,7 @@ describe("minidom", function () {
         });
 
         it("sets the text", function () {
-            var doc = minidom("<html><head>pass</head><body>fail</body></html>");
+            var doc = minidom("<html><head><title>pass</title></head><body>fail</body></html>");
 
             doc.children[0].children[1].textContent = "pass";
             expect(doc.children[0].textContent).toEqual("passpass");
@@ -45,18 +45,12 @@ describe("minidom", function () {
                 expect(doc.children[0].children[1].tagName).toEqual("BODY");
                 expect(doc.children[0].children[1].textContent).toEqual("pass");
             });
-
-            it("rejects non-HTML doctypes", function () {
-                expect(function(){
-                    minidom("<!doctype wrong><html><body>pass</body></html>");
-                }).toThrow(new Error("minidom only supports HTML documents, not '!doctype wrong'"));
-            });
         });
 
         describe("elements", function () {
             it("works", function () {
                 var doc = minidom(
-                    "<html><head><title>pass</title></head><body><h1>pass</h1></body></html>"
+                    "<!doctype html><html><head><title>pass</title></head><body><h1>pass</h1></body></html>"
                 );
                 expect(doc.children[0].tagName).toEqual("HTML");
                 expect(doc.children[0].children[0].tagName).toEqual("HEAD");
@@ -65,7 +59,7 @@ describe("minidom", function () {
 
             it("parses attributes", function () {
                 var doc = minidom(
-                    '<h1 class="good" data-test="ok">pass</h1>'
+                    '<!doctype html><h1 class="good" data-test="ok">pass</h1>'
                 );
                 expect(doc.children[0].tagName).toEqual("H1");
                 expect(doc.children[0].getAttribute("class")).toEqual("good");
@@ -76,7 +70,7 @@ describe("minidom", function () {
         describe("comments", function () {
             it("works", function () {
                 var doc = minidom(
-                    '<html><head></head><body><!-- pass -->'
+                    '<!doctype html><html><head></head><body><!-- pass -->'
                 );
 
                 var comment = doc.children[0].children[1].childNodes[0];
