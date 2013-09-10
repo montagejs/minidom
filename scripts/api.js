@@ -1,7 +1,7 @@
 // A simple script to generate a markdown listing of the most important parts
 // of the DOM API we support
 
-var dom = require("../minidom").dom;
+var dom = require("../dom");
 
 console.log("Properties marked &#x20E0;&nbsp; are read-only\n");
 

@@ -21851,7 +21851,7 @@ exports.tests = {
   },
 
   onevent_properties_are_set_on_setAttribute: function(test) {
-    var dom = require("../../minidom").dom;
+    var dom = require("../../dom");
     var doc = new dom.Document('');
     var elem = doc.createElement('test');
     elem.setAttribute('onclick', 'test');
@@ -21860,7 +21860,7 @@ exports.tests = {
   },
 
   onevent_properties_are_set_on_setAttributeNode: function(test) {
-    var dom = require("../../minidom").dom;
+    var dom = require("../../dom");
     var doc = new dom.Document('');
     var elem = doc.createElement('test');
     var attr = doc.createAttribute('onclick');
@@ -21872,7 +21872,7 @@ exports.tests = {
   },
 
   onevent_properties_are_set_on_attr_set_value: function(test) {
-    var dom = require("../../minidom").dom;
+    var dom = require("../../dom");
     var doc = new dom.Document('');
     var elem = doc.createElement('test');
     var attr = doc.createAttribute('onclick');

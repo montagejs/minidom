@@ -1,4 +1,4 @@
-var dom = require("../../../../minidom").dom;
+var dom = require("../../../../dom");
 
 exports.hc_staff = function() {
 
