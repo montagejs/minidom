@@ -25,7 +25,7 @@ Handler.prototype = {
     },
 
     createElement: function (tagName, namespaceURI, attributes) {
-        var el = this.document.createElement(tagName);
+        var el = this.document.createElement(tagName.toUpperCase());
 
         Object.defineProperty(el, "namespaceURI", {
             configurable: true,
@@ -83,10 +83,16 @@ Handler.prototype = {
     },
 
     setQuirksMode: function (document) {
+        if (document !== this.document) {
+            throw new Error("Given document does not match handler document");
+        }
         this._quirksMode = true;
     },
 
     isQuirksMode: function (document) {
+        if (document !== this.document) {
+            throw new Error("Given document does not match handler document");
+        }
         return this._quirksMode;
     },
 
@@ -99,21 +105,36 @@ Handler.prototype = {
     },
 
     detachNode: function (node) {
-        // TODO if !parentElement
-        node.parentElement.removeChild(node);
+        if (!node.parentNode) {
+            return;
+        }
+        node.parentNode.removeChild(node);
     },
 
     insertText: function (parent, text) {
-        // todo append to prevous text node
-        parent.appendChild(this.document.createTextNode(text));
+        var document = this.document;
+        var last = parent.lastChild;
+        if (last && last.nodeType === document.TEXT_NODE) {
+            last.nodeValue += text;
+        } else {
+            parent.appendChild(document.createTextNode(text));
+        }
     },
 
     insertTextBefore: function (parent, text, reference) {
-        // todo append to prevous text node
-        parent.insertBefore(this.document.createTextNode(text), reference);
+        var document = this.document;
+        if (reference.nodeType === document.TEXT_NODE) {
+            reference.nodeValue = text + reference.nodeValue;
+        } else {
+            parent.insertBefore(document.createTextNode(text), reference);
+        }
     },
 
     adoptAttributes: function (node, attributes) {
+        if (!attributes) {
+            return;
+        }
+
         for (var i = 0, len = attributes.length; i < len; i++) {
             var attr = attributes[i];
             if (node.getAttribute(attr.name) === null) {
