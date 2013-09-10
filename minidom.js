@@ -4,6 +4,7 @@ var dom = require("./lib/dom-level1").dom.level1.core;
 require("./lib/dom-level3");
 // add outerHTML, innerHTML
 require("./lib/extras");
+var domToHtml = require("./lib/domtohtml").domToHtml;
 
 var DOCUMENT_OPTIONS = {
     contentType: "text/html"
@@ -88,6 +89,15 @@ Handler.prototype = {
                 enumerable: true,
                 writable: false,
                 value: systemId
+            },
+            // EXTENSION
+            toString: {
+                configurable: true,
+                enumerable: false,
+                writable: true,
+                value: function () {
+                    return domToHtml(this);
+                }
             }
         });
 
