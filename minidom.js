@@ -54,11 +54,7 @@ Handler.prototype = {
             value: namespaceURI
         });
 
-        for (var name in attributes) {
-            if (attributes.hasOwnProperty(name)) {
-                el.setAttribute(name, attributes[name]);
-            }
-        }
+        this.adoptAttributes(el, attributes);
 
         return el;
     },
@@ -131,7 +127,7 @@ Handler.prototype = {
     adoptAttributes: function (node, attributes) {
         for (var i = 0, len = attributes.length; i < len; i++) {
             var attr = attributes[i];
-            if (node.getAttribute(attr.name) !== null) {
+            if (node.getAttribute(attr.name) === null) {
                 node.setAttribute(attr.name, attr.value);
             }
         }

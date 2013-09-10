@@ -59,11 +59,12 @@ describe("minidom", function () {
 
             it("parses attributes", function () {
                 var doc = minidom(
-                    '<!doctype html><h1 class="good" data-test="ok">pass</h1>'
+                    '<!doctype html><html><head></head><body><h1 class="good" data-test="ok">pass</h1></body></html>'
                 );
-                expect(doc.children[0].tagName).toEqual("H1");
-                expect(doc.children[0].getAttribute("class")).toEqual("good");
-                expect(doc.children[0].getAttribute("data-test")).toEqual("ok");
+                var el = doc.children[0].children[1].children[0];
+                expect(el.tagName).toEqual("H1");
+                expect(el.getAttribute("class")).toEqual("good");
+                expect(el.getAttribute("data-test")).toEqual("ok");
             });
         });
 
