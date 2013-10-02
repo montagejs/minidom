@@ -1,5 +1,3 @@
-// From JSDOM (https://github.com/tmpvar/jsdom)
-// Licensed under the MIT license. See LICENSE.md for details.
 /*
   ServerJS Javascript DOM Level 1
 */
@@ -872,7 +870,7 @@ core.NamedNodeMap = function NamedNodeMap(document) {
 };
 core.NamedNodeMap.prototype = {
   get readonly() { return this._readonly;},
-  get ownerDocument() { return this._ownerDocument;},
+  get ownerDocument() { this._ownerDocument;},
 
   exists : function(name) {
     return (this._nodes[name] || this._nodes[name] === null) ? true : false;
@@ -1221,15 +1219,11 @@ core.Document.prototype = {
   get attributes() { return null;},
   get ownerDocument() { return null;},
   get readonly() { return this._readonly;},
+
   /* returns Element */
-  createElement: function(/* string */ tagName) {
-    var c = [], lower = tagName.toLowerCase(), element;
-
-    if (!tagName || !tagName.match || (c = tagName.match(tagRegEx))) {
-      throw new core.DOMException(INVALID_CHARACTER_ERR, 'Invalid character in tag name: ' + c.pop());
-    }
-
-    element = (this._elementBuilders[lower] || this._defaultElementBuilder)(this, tagName);
+  _createElementNoTagNameValidation: function(/*string*/ tagName) {
+    var lower = tagName.toLowerCase();
+    var element = (this._elementBuilders[lower] || this._defaultElementBuilder)(this, tagName);
 
     // Check for and introduce default elements
     if (this._doctype && this._doctype._attributes && this._doctype.name.toLowerCase() !== "html") {
@@ -1252,6 +1246,19 @@ core.Document.prototype = {
 
     element._created = true;
     return element;
+  },
+
+  /* returns Element */
+  createElement: function(/* string */ tagName) {
+    tagName = String(tagName);
+
+    var c = [];
+
+    if (tagName.length === 0 || (c = tagName.match(tagRegEx))) {
+      throw new core.DOMException(INVALID_CHARACTER_ERR, 'Invalid character in tag name: ' + c.pop());
+    }
+
+    return this._createElementNoTagNameValidation(tagName);
   }, //raises: function(DOMException) {},
 
   /* returns DocumentFragment */
