@@ -1,4 +1,3 @@
-var dom = require("./dom");
 // To stringify the doctype
 var domToHtml = require("./lib/domtohtml").domToHtml;
 
@@ -7,7 +6,8 @@ var DOCUMENT_OPTIONS = {
 };
 
 module.exports = Handler;
-function Handler() {
+function Handler(dom) {
+    this.dom = dom;
     this.document = null;
     this._quirksMode = false;
     this._reset = false;
@@ -16,7 +16,7 @@ function Handler() {
 Handler.prototype = {
 
     createDocument: function () {
-        var document = this.document = new dom.Document(DOCUMENT_OPTIONS);
+        var document = this.document = new this.dom.Document(DOCUMENT_OPTIONS);
         return document;
     },
 
@@ -50,7 +50,7 @@ Handler.prototype = {
     setDocumentType: function (document, name, publicId, systemId) {
         var doctype = this.document.doctype;
         if (!doctype) {
-            doctype = new dom.DocumentType(document);
+            doctype = new this.dom.DocumentType(document);
             document.doctype = doctype;
             this.document.appendChild(doctype);
         }

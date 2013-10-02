@@ -7,7 +7,7 @@ describe("Handler", function () {
 
     var handler;
     beforeEach(function () {
-        handler = new Handler();
+        handler = new Handler(dom);
         handler.createDocument();
     });
 
