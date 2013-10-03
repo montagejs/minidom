@@ -1,11 +1,11 @@
 {
   "name": "minidom",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Small DOM level 1 implementation",
   "homepage": "https://github.com/montagejs/minidom",
-  "repository" : {
-    "type" : "git",
-    "url" : "https://github.com/montagejs/minidom.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/montagejs/minidom.git"
   },
   "main": "minidom.js",
   "scripts": {
