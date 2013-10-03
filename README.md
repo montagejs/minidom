@@ -11,7 +11,16 @@ var minidom = require("minidom");
 
 var document = minidom('<!doctype><html><head><title>Hello</title><body><h1>Hi!</h1></body></html>');
 
-document.getElementsByTagName("h1")[0].textContent === "Hi!"; // true
+expect(document.getElementsByTagName("h1")[0].textContent).toEqual("Hi!");
+```
+
+You can also access the DOM implementation used internally:
+
+```javascript
+var dom = require("minidom/dom");
+
+var document = minidom();
+expect(document instanceof dom.Node).toBeTruthy();
 ```
 
 ## Differences with JSDom
@@ -22,7 +31,7 @@ document.getElementsByTagName("h1")[0].textContent === "Hi!"; // true
 | CSSOM | Yes | No |
 | Loads remote resources | Yes | No |
 | HTML5 parsing algorithm | No | Yes* |
-| Runs in the browser | No | Soon** |
+| Runs in the browser | No | Yes** |
 | Awesome | Yes | Yes |
 
 Basically minidom does a lot less, but often it's all you need.
