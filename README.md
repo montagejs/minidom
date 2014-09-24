@@ -36,9 +36,9 @@ expect(document instanceof dom.Node).toBeTruthy();
 
 Basically minidom does a lot less, but often it's all you need.
 
-* This means that the DOM representation is the same as you would get in the browser, but may not be suitable if you wish to preserve as much of the original formatting as possible. For example parsing `<body>hi</body><head><title>hello</title>` with minidom results in a document that looks like `<html><head></head><body>hi<title>hello</title></body></html> `, where as JSDom outputs `<html><body>hi</body><head><title>hello</title></head></html>`.
+<sub>* This means that the DOM representation is the same as you would get in the browser, but may not be suitable if you wish to preserve as much of the original formatting as possible. For example parsing `<body>hi</body><head><title>hello</title>` with minidom results in a document that looks like `<html><head></head><body>hi<title>hello</title></body></html> `, where as JSDom outputs `<html><body>hi</body><head><title>hello</title></head></html>`.</sub>
 
-** This is probably very cool, although I have no idea why.
+<sub>** This is probably very cool, although I have no idea why.</sub>
 
 ## Supported API
 
