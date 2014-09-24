@@ -1,3 +1,8 @@
+## 0.1.1
+
+- Update to parse5 v1.1.4
+- Add `length` setter to `NodeList`
+
 ## 0.1.0
 
  - Reorganise modules
