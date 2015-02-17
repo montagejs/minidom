@@ -9,7 +9,7 @@
   },
   "main": "minidom.js",
   "scripts": {
-    "test": "istanbul test -x '**/spec/**' jasmine-node -- spec"
+    "test": "istanbul test -x '**/spec/**' jasminum -- spec"
   },
   "keywords": [
     "dom",
@@ -21,7 +21,7 @@
     "parse5": "~1.1.4"
   },
   "devDependencies": {
-    "jasmine-node": "~1.7.1",
-    "istanbul": "~0.1.36"
+    "istanbul": "~0.1.36",
+    "jasminum": "0.0.4"
   }
 }
