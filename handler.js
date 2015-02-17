@@ -137,6 +137,11 @@ Handler.prototype = {
 
         for (var i = 0, len = attributes.length; i < len; i++) {
             var attr = attributes[i];
+
+            if (typeof attr.prefix === "string" && attr.prefix.length > 0) {
+                attr.name = attr.prefix + ":" + attr.name;
+            }
+
             if (node.getAttribute(attr.name) === null) {
                 node.setAttribute(attr.name, attr.value);
             }

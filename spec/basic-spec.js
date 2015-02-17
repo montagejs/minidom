@@ -59,12 +59,15 @@ describe("minidom", function () {
 
             it("parses attributes", function () {
                 var doc = minidom(
-                    '<!doctype html><html><head></head><body><h1 class="good" data-test="ok">pass</h1></body></html>'
+                    '<!doctype html><html><head></head><body><h1 class="good" data-test="ok">pass</h1><svg xmlns:xlink="http://www.w3.org/1999/xlink"></svg></body></html>'
                 );
-                var el = doc.children[0].children[1].children[0];
+                var el = doc.children[0].children[1].children[0],
+                    svgElement = doc.children[0].children[1].children[1];
+
                 expect(el.tagName).toEqual("H1");
                 expect(el.getAttribute("class")).toEqual("good");
                 expect(el.getAttribute("data-test")).toEqual("ok");
+                expect(svgElement.getAttribute("xmlns:xlink")).toEqual("http://www.w3.org/1999/xlink");
             });
         });
 
