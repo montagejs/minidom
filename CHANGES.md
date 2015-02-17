@@ -1,4 +1,10 @@
-## 0.1.1
+# 1.0.0
+
+- Add support for parsing attributes with namespaces (e.g. embedded SVG)
+- Switch testing from jasmine-node to jasminum
+- v1.0 release as basic API is unlikely to change
+
+### 0.1.1
 
 - Update to parse5 v1.1.4
 - Add `length` setter to `NodeList`
