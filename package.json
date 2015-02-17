@@ -1,6 +1,6 @@
 {
   "name": "minidom",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "description": "Small DOM level 1 implementation",
   "homepage": "https://github.com/montagejs/minidom",
   "repository": {
