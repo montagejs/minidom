@@ -18,7 +18,7 @@
   "author": "Stuart Knightley <stuart@stuartk.com>",
   "license": "MIT",
   "dependencies": {
-    "parse5": "~1.1.4"
+    "parse5": "~2.1.5"
   },
   "devDependencies": {
     "istanbul": "~0.1.36",
