@@ -426,7 +426,8 @@ core.Node.prototype = {
     if (this.nodeType === ELEMENT_NODE &&
         this._ownerDocument                  &&
         this._ownerDocument._doctype          &&
-        this._ownerDocument._doctype.name.toLowerCase().indexOf("html") !== -1)
+        this._ownerDocument._doctype._name    &&
+        this._ownerDocument._doctype._name.toLowerCase().indexOf("html") !== -1)
     {
       return name.toUpperCase();
     }
@@ -1037,7 +1038,8 @@ core.Element.prototype = {
     if (this.nodeType === ELEMENT_NODE &&
         this._ownerDocument                  &&
         this._ownerDocument._doctype          &&
-        this._ownerDocument._doctype.name.toLowerCase().indexOf("html") !== -1)
+        this._ownerDocument._doctype._name    &&
+        this._ownerDocument._doctype._name.toLowerCase().indexOf("html") !== -1)
     {
       return this.nodeName.toUpperCase();
     }
@@ -1229,7 +1231,7 @@ core.Document.prototype = {
     var element = (this._elementBuilders[lower] || this._defaultElementBuilder)(this, tagName);
 
     // Check for and introduce default elements
-    if (this._doctype && this._doctype._attributes && this._doctype.name.toLowerCase() !== "html") {
+    if (this._doctype && this._doctype._attributes && this._doctype._name && this._doctype._name.toLowerCase() !== "html") {
       var attrElement = this._doctype._attributes.getNamedItem(tagName);
       if (attrElement && attrElement._childNodes) {
 
