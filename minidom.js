@@ -1,4 +1,4 @@
-var Parser = require("parse5").Parser;
+var parse5 = require("parse5");
 var Handler = require("./handler");
 var dom = require("./dom");
 
@@ -8,9 +8,8 @@ module.exports = function minidom(html) {
     }
 
     var handler = new Handler(dom);
-    var parser = new Parser(handler);
 
-    parser.parse(html);
+    parse5.parse(html, {treeAdapter: handler});
 
     return handler.document;
 };

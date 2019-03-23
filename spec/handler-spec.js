@@ -90,19 +90,19 @@ describe("Handler", function () {
         });
     });
 
-    describe("setQuirksMode", function () {
-        it("changes isQuirksMode", function () {
-            handler.setQuirksMode(handler.document);
-            expect(handler.isQuirksMode(handler.document)).toEqual(true);
+    describe("setDocumentMode", function () {
+        it("changes getDocumentMode", function () {
+            handler.setDocumentMode(handler.document, "quirks");
+            expect(handler.getDocumentMode(handler.document)).toEqual("quirks");
         });
 
         it("throws an error on a document not owned by the handler", function () {
             expect(function () {
-                handler.setQuirksMode({});
+                handler.setDocumentMode({}, "quirks");
             }).toThrow();
 
             expect(function () {
-                handler.isQuirksMode({});
+                handler.getDocumentMode({});
             }).toThrow();
         });
     });

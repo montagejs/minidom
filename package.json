@@ -18,10 +18,10 @@
   "author": "Stuart Knightley <stuart@stuartk.com>",
   "license": "MIT",
   "dependencies": {
-    "parse5": "~1.1.4"
+    "parse5": "^5.1.0"
   },
   "devDependencies": {
-    "istanbul": "~0.1.36",
-    "jasminum": "0.0.4"
+    "istanbul": "^0.4.5",
+    "jasminum": "^0.0.6"
   }
 }
