@@ -9,7 +9,7 @@ module.exports = Handler;
 function Handler(dom) {
     this.dom = dom;
     this.document = null;
-    this._quirksMode = false;
+    this._quirksMode = "no-quirks";
     this._reset = false;
 }
 
@@ -82,14 +82,14 @@ Handler.prototype = {
 
     },
 
-    setQuirksMode: function (document) {
+    setDocumentMode: function (document, mode) {
         if (document !== this.document) {
             throw new Error("Given document does not match handler document");
         }
-        this._quirksMode = true;
+        this._quirksMode = mode;
     },
 
-    isQuirksMode: function (document) {
+    getDocumentMode: function (document) {
         if (document !== this.document) {
             throw new Error("Given document does not match handler document");
         }
